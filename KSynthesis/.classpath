@@ -2,5 +2,31 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/javacsv.jar"/>
+	<classpathentry kind="lib" path="lib/extjwnl-1.6.9.jar"/>
+	<classpathentry kind="lib" path="lib/hac.jar"/>
+	<classpathentry kind="lib" path="lib/simmetrics_jar_v1_6_2_d07_02_07.jar"/>
+	<classpathentry kind="lib" path="lib/sspace-2.0.3-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/hadoop-0.20.2-core.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/je-4.0.103.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/jsc.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/maxent-3.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/opennlp-tools-1.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/trove-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/weka-wrapper-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/weka.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/wikipedia-miner-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/wikipedia-miner.jar"/>
+	<classpathentry kind="lib" path="lib/wikipedia-miner/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="lib/guava-17.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/FAMILIAR"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SPLAR-plugin"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
