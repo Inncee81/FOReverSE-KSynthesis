@@ -1,5 +1,6 @@
-package foreverse.ksynthesis.evaluation;
+package foreverse.ksynthesis.evaluation.ese;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,22 +8,25 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import com.csvreader.CsvWriter;
 import com.google.common.collect.Sets;
 
-import foreverse.ksynthesis.test.FeatureModelLoader;
-import foreverse.ksynthesis.test.HeuristicLoader;
+import foreverse.ksynthesis.Heuristic;
+import foreverse.ksynthesis.InteractiveFMSynthesizer;
+import foreverse.ksynthesis.evaluation.commons.FeatureModelLoader;
+import foreverse.ksynthesis.evaluation.commons.HeuristicLoader;
+import foreverse.ksynthesis.gui.KeyValue;
+import foreverse.ksynthesis.metrics.AlwaysZeroMetric;
+import foreverse.ksynthesis.metrics.CommonEdgesMetric;
+import foreverse.ksynthesis.metrics.ImplicationGraphMetrics;
+import foreverse.ksynthesis.metrics.RandomMetric;
+import foreverse.ksynthesis.metrics.TransitiveReductionMetric;
 import fr.familiar.experimental.FGroup;
-import fr.familiar.gui.synthesis.KeyValue;
-import fr.familiar.operations.heuristics.Heuristic;
-import fr.familiar.operations.heuristics.InteractiveFMSynthesizer;
-import fr.familiar.operations.heuristics.metrics.AlwaysZeroMetric;
-import fr.familiar.operations.heuristics.metrics.CommonEdgesMetric;
-import fr.familiar.operations.heuristics.metrics.ImplicationGraphMetrics;
-import fr.familiar.operations.heuristics.metrics.RandomMetric;
 import fr.familiar.test.FMLTest;
 import fr.familiar.variable.FeatureModelVariable;
 import gsd.graph.ImplicationGraph;
@@ -37,69 +41,65 @@ public class ESEEvaluation extends FMLTest {
 	private static final int N_START = 1;
 	private static final int N_END = 5;
 	
-	private static final String OUTPUT_FOLDER = "output/ksynthesis-eval/";
+	private static final String OUTPUT_FOLDER = "output/";
 	
 	private static int RANDOM_ITERATIONS = 1000;
 	private static double RANDOM_THRESHOLD = 0.15; // FIXME
+	private static HeuristicLoader heuristicLoader;
+	private static List<Heuristic> heuristics;
+	private static HashMap<Heuristic, Double> thresholds;
 
+	@BeforeClass
+	public static void loadResources() {
+		System.out.println("Loading heuristics...");
+		heuristicLoader = new HeuristicLoader();
+		heuristics = heuristicLoader.loadHeuristics();
+		thresholds = heuristicLoader.getDefaultClusteringThresholds();
+	}
+	
+	@AfterClass
+	public static void releaseResources() {
+		heuristicLoader.closeHeuristics();
+	}
+	
 	@Test
 	public void testSPLOTforICSE() throws IOException {
-		// Load heuristics
-		System.out.println("Loading heuristics...");
-		HeuristicLoader heuristicLoader = new HeuristicLoader();
-		List<Heuristic> heuristics = heuristicLoader.loadHeuristics();
-		HashMap<Heuristic, Double> thresholds = heuristicLoader.getDefaultClusteringThresholds();
-
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
 
 		// SPLOT FMs
-		System.out.println("Loading SPLOT feature models");
+		System.out.println("Loading SPLOT feature models for ICSE");
 		List<FeatureModelVariable> splotFMs = featureModelLoader.getSPLOTFeatureModelsForICSE();
 
-		evaluation(heuristics, thresholds, splotFMs, OUTPUT_FOLDER + "ICSE/", true);
+		evaluation(heuristics, thresholds, splotFMs, new File(OUTPUT_FOLDER + "ICSE/"), true);
 
-		heuristicLoader.closeHeuristics();
 		System.out.println();
 	}
 	
+	@Ignore
 	@Test
 	public void testSPLOTforESE() throws IOException {
-		// Load heuristics
-		System.out.println("Loading heuristics...");
-		HeuristicLoader heuristicLoader = new HeuristicLoader();
-		List<Heuristic> heuristics = heuristicLoader.loadHeuristics();
-		HashMap<Heuristic, Double> thresholds = heuristicLoader.getDefaultClusteringThresholds();
-		
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
 
 		// SPLOT FMs
-		System.out.println("Loading SPLOT feature models");
+		System.out.println("Loading SPLOT feature models for ESE");
 		List<FeatureModelVariable> splotFMs = featureModelLoader.getSPLOTFeatureModels();
 		
-		evaluation(heuristics, thresholds, splotFMs, OUTPUT_FOLDER + "ESE/SPLOT/", false); // FIXME : compute with or groups
+		evaluation(heuristics, thresholds, splotFMs, new File(OUTPUT_FOLDER + "ESE/SPLOT/"), false); // FIXME : compute with or groups
 		
-		
-		heuristicLoader.closeHeuristics();
 		System.out.println();
 	}
 	
+	@Ignore
 	@Test
 	public void testPCMforESE() throws IOException {
-		// Load heuristics
-		System.out.println("Loading heuristics...");
-		HeuristicLoader heuristicLoader = new HeuristicLoader();
-		List<Heuristic> heuristics = heuristicLoader.loadHeuristics();
-		HashMap<Heuristic, Double> thresholds = heuristicLoader.getDefaultClusteringThresholds();
-
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
 
 		// PCM FMs
 		System.out.println("Loading PCM feature models");
 		List<FeatureModelVariable> pcmFMs = featureModelLoader.getPCMFeatureModels();
 
-		evaluation(heuristics, thresholds, pcmFMs, OUTPUT_FOLDER + "ESE/PCMs/", false);
+		evaluation(heuristics, thresholds, pcmFMs, new File(OUTPUT_FOLDER + "ESE/PCMs/"), false);
 		
-		heuristicLoader.closeHeuristics();
 		System.out.println();
 	}
 
@@ -113,35 +113,37 @@ public class ESEEvaluation extends FMLTest {
 	 * @param random : enter "random mode" which redefine heuristics and perform the evaluation on RANDOM_ITERATIONS runs
 	 * @throws IOException
 	 */
-	public void evaluation(List<Heuristic> heuristics, HashMap<Heuristic, Double> thresholds, List<FeatureModelVariable> fms, String outputFolder, boolean computeOrGroups) throws IOException {
+	public void evaluation(List<Heuristic> heuristics, HashMap<Heuristic, Double> thresholds, List<FeatureModelVariable> fms, File outputFolder, boolean computeOrGroups) throws IOException {
 		
 		
 		// Stats
 		System.out.println("Computing stats");
-		CsvWriter writerStats = new CsvWriter(outputFolder + "stats.csv");
+		outputFolder.mkdirs();
+		
+		CsvWriter writerStats = new CsvWriter(outputFolder.getAbsolutePath() + "/stats.csv");
 		testFeatureModelStats(writerStats, fms);
 		writerStats.close();
 
 		// Full synthesis and TOP N
 		boolean random = false;
 		System.out.println("Computing top N and full synthesis");
-		CsvWriter writerSynthesis = new CsvWriter(outputFolder + "fullsynthesis.csv");
-		testSynthesis(writerSynthesis, heuristics, fms, false, random);
+		CsvWriter writerSynthesis = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesis.csv");
+		testSynthesis(writerSynthesis, heuristics, fms, false, random, computeOrGroups);
 		writerSynthesis.close();
 
 		System.out.println("Computing top N and full synthesis on RBIG");
-		CsvWriter writerSynthesisRBIG = new CsvWriter(outputFolder + "fullsynthesisRBIG.csv");
-		testSynthesis(writerSynthesisRBIG, heuristics, fms, true, random);
+		CsvWriter writerSynthesisRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesisRBIG.csv");
+		testSynthesis(writerSynthesisRBIG, heuristics, fms, true, random, computeOrGroups);
 		writerSynthesisRBIG.close();
 
 		// Clustering
 		System.out.println("Computing clusters");
-		CsvWriter writerClustering = new CsvWriter(outputFolder + "clustering.csv");
+		CsvWriter writerClustering = new CsvWriter(outputFolder.getAbsolutePath() + "/clustering.csv");
 		testClustering(writerClustering, heuristics, fms, thresholds, false, random);
 		writerClustering.close();
 
 		System.out.println("Computing clusters on RBIG");
-		CsvWriter writerClusteringRBIG = new CsvWriter(outputFolder + "clusteringRBIG.csv");
+		CsvWriter writerClusteringRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/clusteringRBIG.csv");
 		testClustering(writerClusteringRBIG, heuristics, fms, thresholds, true, random);
 		writerClusteringRBIG.close();
 		
@@ -152,23 +154,23 @@ public class ESEEvaluation extends FMLTest {
 		randomHeuristic.add(new RandomMetric());
 		// Full synthesis and TOP N
 		System.out.println("Computing top N and full synthesis (random)");
-		CsvWriter writerSynthesisRandom = new CsvWriter(outputFolder + "random_fullsynthesis.csv");
-		testSynthesis(writerSynthesisRandom, randomHeuristic, fms, false, random);
+		CsvWriter writerSynthesisRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesis.csv");
+		testSynthesis(writerSynthesisRandom, randomHeuristic, fms, false, random, computeOrGroups);
 		writerSynthesisRandom.close();
 
 		System.out.println("Computing top N and full synthesis on RBIG (random)");
-		CsvWriter writerSynthesisRBIGRandom = new CsvWriter(outputFolder + "random_fullsynthesisRBIG.csv");
-		testSynthesis(writerSynthesisRBIGRandom, randomHeuristic, fms, true, random);
+		CsvWriter writerSynthesisRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesisRBIG.csv");
+		testSynthesis(writerSynthesisRBIGRandom, randomHeuristic, fms, true, random, computeOrGroups);
 		writerSynthesisRBIGRandom.close();
 
 		// Clustering
 		System.out.println("Computing clusters (random)");
-		CsvWriter writerClusteringRandom = new CsvWriter(outputFolder + "random_clustering.csv");
+		CsvWriter writerClusteringRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clustering.csv");
 		testClustering(writerClusteringRandom, randomHeuristic, fms, thresholds, false, random);
 		writerClusteringRandom.close();
 
 		System.out.println("Computing clusters on RBIG (random)");
-		CsvWriter writerClusteringRBIGRandom = new CsvWriter(outputFolder + "random_clusteringRBIG.csv");
+		CsvWriter writerClusteringRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clusteringRBIG.csv");
 		testClustering(writerClusteringRBIGRandom, randomHeuristic, fms, thresholds, true, random);
 		writerClusteringRBIGRandom.close();
 		
@@ -176,18 +178,18 @@ public class ESEEvaluation extends FMLTest {
 		
 		// Cliques
 		System.out.println("Cliques as clusters");
-		CsvWriter writerCliques = new CsvWriter(outputFolder + "cliques.csv");
+		CsvWriter writerCliques = new CsvWriter(outputFolder.getAbsolutePath() + "/cliques.csv");
 		testCliques(writerCliques, fms);
 		writerCliques.close();
 		
 		// Feature groups
 		System.out.println("Feature groups as clusters");
-		CsvWriter writerFGroups = new CsvWriter(outputFolder + "fgroups.csv");
+		CsvWriter writerFGroups = new CsvWriter(outputFolder.getAbsolutePath() + "/fgroups.csv");
 		testFeatureGroups(writerFGroups, fms, false, computeOrGroups);
 		writerFGroups.close();
 		
 		System.out.println("Feature groups as clusters on RBIG");
-		CsvWriter writerFGroupsRBIG = new CsvWriter(outputFolder + "fgroupsRBIG.csv");
+		CsvWriter writerFGroupsRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/fgroupsRBIG.csv");
 		testFeatureGroups(writerFGroupsRBIG, fms, true, computeOrGroups);
 		writerFGroupsRBIG.close();
 		
@@ -267,19 +269,18 @@ public class ESEEvaluation extends FMLTest {
 	 * @param random 
 	 * @throws IOException
 	 */
-	public void testSynthesis(CsvWriter writer, List<Heuristic> heuristics, List<FeatureModelVariable> fms, boolean reduceBIG, boolean random) throws IOException {
+	public void testSynthesis(CsvWriter writer, List<Heuristic> heuristics, List<FeatureModelVariable> fms, boolean reduceBIG, boolean random, boolean computeOrGroups) throws IOException {
 		// Write header
 		writeHeaderForSynthesis(writer, heuristics, random);
 		
 		// Perform full synthesis on each couple of heuristic and fm
 		int nbRuns = random? RANDOM_ITERATIONS : 1;
 		for (FeatureModelVariable fm : fms) {
-			writer.write(fm.getCompleteIdentifier());
 			
 			for (int run=0; run<nbRuns; run++) {
-
+				writer.write(fm.getCompleteIdentifier());
+				
 				if (random) {
-					if (run > 0) {  writer.write(""); }
 					writer.write("" + run);
 					heuristics = new ArrayList<Heuristic>();
 					heuristics.add(new RandomMetric());
@@ -289,6 +290,11 @@ public class ESEEvaluation extends FMLTest {
 					InteractiveFMSynthesizer synthesizer = new InteractiveFMSynthesizer(fm, new AlwaysZeroMetric(), new ArrayList<Heuristic>(), new AlwaysZeroMetric(), -1);
 					if (reduceBIG) {
 						synthesizer.reduceBIG();
+					}
+					
+					// Define if or groups should be computed for the transitive reduction metric
+					if (heuristic instanceof TransitiveReductionMetric) {
+						((TransitiveReductionMetric) heuristic).setOrRequired(computeOrGroups);
 					}
 
 					synthesizer.setParentSimilarityMetric(heuristic);
@@ -318,25 +324,11 @@ public class ESEEvaluation extends FMLTest {
 			writer.write("run");
 		}
 		for (Heuristic heuristic : heuristics) {
-			writer.write(heuristic.toString());
 			for (int n=N_START; n<= N_END; n++) {
-				writer.write("");
+				writer.write(heuristic.toString() + " - TOP " + n);
 			}
+			writer.write(heuristic.toString() + " - Full Synthesis");
 		}
-		writer.endRecord();
-		
-		writer.write("");
-		if (random) {
-			writer.write("");
-		}
- 		for (Heuristic heuristic : heuristics) {
-			for (int n=N_START; n<= N_END; n++) {
-				writer.write("TOP " + n);
-			}
-			
-			writer.write("Full Synthesis");
-		}
-		
 		writer.endRecord();
 	}
 	
@@ -398,14 +390,9 @@ public class ESEEvaluation extends FMLTest {
 			FeatureGraph<String> hierarchy = fm.getFm().getDiagram();
 			List<Set<String>> siblingsList = convertInSetOfString(hierarchy.getSiblingSetsInBFS());
 			
-			writer.write(fm.getCompleteIdentifier());
-			
 			for (int run=0; run<nbRuns; run++) {
-
+				writer.write(fm.getCompleteIdentifier());
 				if (random) {
-					if (run > 0) {
-						writer.write("");	
-					}
 					writer.write("" + run);
 					heuristics = new ArrayList<Heuristic>();
 					Heuristic randomHeuristic = new RandomMetric();
@@ -471,22 +458,10 @@ public class ESEEvaluation extends FMLTest {
 		}
 
 		for (Heuristic heuristic : heuristics) {
-			writer.write(heuristic.toString());
-			for (int i=0; i<3; i++) { 
-				writer.write("");
-			}
-		}
-		writer.endRecord();
-		
-		writer.write("");
-		if (random) {
-			writer.write("");			
-		}
-		for (Heuristic heuristic : heuristics) {
-			writer.write("#clusters");
-			writer.write("average cluster size");
-			writer.write("% correct clusters");
-			writer.write("% features in a correct cluster");
+			writer.write(heuristic.toString() + " - #clusters");
+			writer.write(heuristic.toString() + " - average cluster size");
+			writer.write(heuristic.toString() + " - % correct clusters");
+			writer.write(heuristic.toString() + " - % features in a correct cluster");
 		}
 		writer.endRecord();
 	}
@@ -624,23 +599,21 @@ public class ESEEvaluation extends FMLTest {
 	}
 	
 	public void writeHeaderForFGroups(CsvWriter writer) throws IOException {
-		writer.write("");
-		writer.write("Mutex");
-		for (int i=0; i<3; i++) { writer.write("");	}
-		writer.write("Xor");
-		for (int i=0; i<3; i++) { writer.write("");	}
-		writer.write("Or");
+		writer.write("ID");
+		writeHeaderFGroupUtils(writer, "Mutex");
+		writeHeaderFGroupUtils(writer, "Xor");
+		writeHeaderFGroupUtils(writer, "Or");
 		writer.endRecord();
 		
-		writer.write("ID");
-		for (int i=0; i<3; i++) { 
-			writer.write("#clusters");
-			writer.write("average cluster size");
-			writer.write("% correct clusters");
-			writer.write("% features in a correct cluster");
-		}
-		writer.endRecord();
 	}
+	
+	private void writeHeaderFGroupUtils(CsvWriter writer, String groupType) throws IOException  {
+		writer.write(groupType + " - #clusters");
+		writer.write(groupType + " - average cluster size");
+		writer.write(groupType + " - % correct clusters");
+		writer.write(groupType + " - % features in a correct cluster");
+	}
+	
 	
 	private void computeStatsOnGroups(CsvWriter writer, Set<FGroup> groups, FeatureGraph<String> diagram, List<Set<String>> siblingsList) throws IOException {
 				

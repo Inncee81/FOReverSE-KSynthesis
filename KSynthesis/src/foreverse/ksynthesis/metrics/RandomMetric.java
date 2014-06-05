@@ -24,4 +24,9 @@ public class RandomMetric extends SimpleHeuristic implements KSynthesisPlugin {
 		return rand.nextDouble();
 	}
 
+	@Override
+	public String toString() {
+		return "Random";
+	}
+	
 }

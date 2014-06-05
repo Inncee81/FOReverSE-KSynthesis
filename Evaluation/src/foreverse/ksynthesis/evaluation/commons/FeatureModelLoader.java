@@ -1,4 +1,4 @@
-package foreverse.ksynthesis.test;
+package foreverse.ksynthesis.evaluation.commons;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,6 +7,7 @@ import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.List;
 
+import foreverse.ksynthesis.evaluation.KSynthesisTest;
 import fr.familiar.interpreter.FMLShell;
 import fr.familiar.parser.FMBuilder;
 import fr.familiar.variable.FeatureModelVariable;

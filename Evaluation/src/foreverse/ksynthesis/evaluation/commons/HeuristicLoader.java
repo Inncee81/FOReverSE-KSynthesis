@@ -1,18 +1,18 @@
-package foreverse.ksynthesis.test;
+package foreverse.ksynthesis.evaluation.commons;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import fr.familiar.operations.heuristics.Heuristic;
-import fr.familiar.operations.heuristics.metrics.LevenshteinMetric;
-import fr.familiar.operations.heuristics.metrics.PathLengthMetric;
-import fr.familiar.operations.heuristics.metrics.RandomMetric;
-import fr.familiar.operations.heuristics.metrics.SmithWatermanMetric;
-import fr.familiar.operations.heuristics.metrics.TransitiveReductionMetric;
-import fr.familiar.operations.heuristics.metrics.WikipediaMinerMetric;
-import fr.familiar.operations.heuristics.metrics.WuPalmerMetric;
+import foreverse.ksynthesis.Heuristic;
+import foreverse.ksynthesis.metrics.LevenshteinMetric;
+import foreverse.ksynthesis.metrics.PathLengthMetric;
+import foreverse.ksynthesis.metrics.SmithWatermanMetric;
+import foreverse.ksynthesis.metrics.TransitiveReductionMetric;
+import foreverse.ksynthesis.metrics.WikipediaMinerMetric;
+import foreverse.ksynthesis.metrics.WuPalmerMetric;
+
 
 public class HeuristicLoader {
 
@@ -102,4 +102,5 @@ public class HeuristicLoader {
 	public HashMap<Heuristic, Double> getDefaultClusteringThresholds() {
 		return clusteringThresholds;
 	}
+	
 }

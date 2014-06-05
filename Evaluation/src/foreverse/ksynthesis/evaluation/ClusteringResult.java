@@ -1,4 +1,4 @@
-package foreverse.ksynthesis.test;
+package foreverse.ksynthesis.evaluation;
 
 public class ClusteringResult {
 

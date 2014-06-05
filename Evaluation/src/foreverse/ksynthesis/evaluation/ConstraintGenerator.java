@@ -1,4 +1,4 @@
-package foreverse.ksynthesis.test;
+package foreverse.ksynthesis.evaluation;
 
 import java.io.File;
 import java.io.IOException;

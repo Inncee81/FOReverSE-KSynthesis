@@ -1,7 +1,7 @@
 /**
  * 
  */
-package foreverse.ksynthesis.test;
+package foreverse.ksynthesis.evaluation;
 
 import fr.familiar.operations.heuristics.mst.WeightedImplicationGraph;
 import fr.familiar.parser.FMBuilder;

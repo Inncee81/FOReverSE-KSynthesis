@@ -1,4 +1,4 @@
-package foreverse.ksynthesis.test;
+package foreverse.ksynthesis.evaluation;
 
 import fr.familiar.experimental.FGroup;
 import fr.familiar.variable.FeatureModelVariable;

@@ -1,4 +1,4 @@
-package foreverse.ksynthesis.test;
+package foreverse.ksynthesis.evaluation;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,6 +34,7 @@ public class ICSE2014Experiment1 extends KSynthesisTest {
 		testOptimumBranching(getSPLOTFeatureModelsForFASE(), false);
 	}
 	
+	@Ignore
 	@Test
 	public void testOptimumBranchingSPLOTReduced() {
 		System.out.println("Optimum branching SPLOT (BIG reduced)");
@@ -46,6 +47,7 @@ public class ICSE2014Experiment1 extends KSynthesisTest {
 	
 	
 	// PCM 
+	@Ignore
 	@Test
 	public void testOptimumBranchingPCM() {
 		System.out.println("Optimum branching PCM");
@@ -53,6 +55,7 @@ public class ICSE2014Experiment1 extends KSynthesisTest {
 		testOptimumBranching(getPCMFeatureModels(), false);
 	}
 	
+	@Ignore
 	@Test
 	public void testOptimumBranchingPCMReduced() {
 		System.out.println("Optimum branching PCM (BIG reduced)");
