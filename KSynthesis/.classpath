@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="lib/javacsv.jar"/>
 	<classpathentry kind="lib" path="lib/extjwnl-1.6.9.jar"/>
 	<classpathentry kind="lib" path="lib/hac.jar"/>
 	<classpathentry kind="lib" path="lib/simmetrics_jar_v1_6_2_d07_02_07.jar"/>
@@ -26,6 +25,7 @@
 	<classpathentry kind="lib" path="lib/wikipedia-miner/wikipedia-miner.jar"/>
 	<classpathentry kind="lib" path="lib/wikipedia-miner/xercesImpl.jar"/>
 	<classpathentry kind="lib" path="lib/guava-17.0.jar"/>
+	<classpathentry kind="lib" path="lib/javacsv.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/FAMILIAR"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SPLAR-plugin"/>
 	<classpathentry kind="output" path="bin"/>

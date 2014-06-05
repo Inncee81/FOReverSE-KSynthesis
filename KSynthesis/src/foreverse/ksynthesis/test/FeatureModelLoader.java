@@ -14,13 +14,13 @@ import gsd.synthesis.BDDBuilder;
 
 public class FeatureModelLoader {
 	
-	private static final String SPLOT_FOLDER = "inputFML/splot-models-2014-01-30";
-	private static final String SPLOT_INCLUDE = "inputFML/splot-models-2014-01-30/ESE_meaningful_FMs.txt";
-	private static final String SPLOT_EXCLUDE = "inputFML/splot-models-2014-01-30/ESE_excluded_FMs.txt";
+	private static final String SPLOT_FOLDER = "input/splot-models-2014-01-30";
+	private static final String SPLOT_INCLUDE = "input/splot-models-2014-01-30/ESE_meaningful_FMs.txt";
+	private static final String SPLOT_EXCLUDE = "input/splot-models-2014-01-30/ESE_excluded_FMs.txt";
 
-	private static final String SPLOT_FOLDER_ICSE = "inputFML/splot-models-2012-08-07";
+	private static final String SPLOT_FOLDER_ICSE = "input/splot-models-2012-08-07";
 	
-	private static final String PCM_FOLDER = "inputFML/ICSE2014-PCMs";
+	private static final String PCM_FOLDER = "input/ICSE2014-PCMs";
 	
 	private FMLShell _shell;
 	private BDDBuilder<String> _builder;
