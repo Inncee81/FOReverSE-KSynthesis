@@ -54,6 +54,11 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println("Loading heuristics...");
 		heuristicLoader = new HeuristicLoader();
 		heuristics = heuristicLoader.loadHeuristics();
+		System.out.println("Loaded heuristics: ");
+		for (Heuristic heuristic : heuristics) {
+			System.out.println(heuristic);
+		}
+		System.out.println();
 		thresholds = heuristicLoader.getDefaultClusteringThresholds();
 	}
 	

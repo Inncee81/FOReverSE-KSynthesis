@@ -16,7 +16,7 @@ import foreverse.ksynthesis.metrics.WuPalmerMetric;
 
 public class HeuristicLoader {
 
-	private static final String WORDNET_DB = "wordnet_properties.xml";
+	private static final String WORDNET_DB = "resources/WordNet-3.0/wordnet_properties.xml";
 	private static final String WIKIPEDIA_DB = "/mnt/windows/Users/gbecan/Documents/db_wikipedia/wikipedia-template.xml";
 	private static final String WIKTIONARY_DB = "/mnt/windows/Users/gbecan/Documents/db_wiktionary/wikipedia-template.xml";
 	
