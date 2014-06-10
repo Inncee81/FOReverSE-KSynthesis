@@ -28,6 +28,7 @@ public class ICSE2014Experiment3 extends KSynthesisTest {
 
 
 	// Implication graph
+	@Ignore
 	@Test
 	public void testTransitiveReductionSPLOT() {
 		System.out.println("Transitive reduction SPLOT");
@@ -93,6 +94,7 @@ public class ICSE2014Experiment3 extends KSynthesisTest {
 
 	// Cliques
 
+	@Ignore
 	@Test
 	public void testCliquesSPLOT() {
 		System.out.println("Cliques SPLOT");
@@ -295,24 +297,28 @@ public class ICSE2014Experiment3 extends KSynthesisTest {
 
 	// Feature groups
 
+	@Ignore
 	@Test
 	public void testFeatureGroupsOnCompleteBIGSPLOT() {
 		System.out.println("Feature groups on complete BIG - SPLOT");
 		testFeatureGroups(getSPLOTFeatureModelsForFASE(), false, true);
 	}
 
+	@Ignore
 	@Test
 	public void testFeatureGroupsOnFeatureGraphSPLOT() {
 		System.out.println("Feature groups on feature graph - SPLOT");
 		testFeatureGroups(getSPLOTFeatureModelsForFASE(), true, true);
 	}
 	
+	@Ignore
 	@Test
 	public void testFeatureGroupsOnCompleteBIGPCM() {
 		System.out.println("Feature groups on complete BIG - PCM");
 		testFeatureGroups(getPCMFeatureModels(), false, false);
 	}
 
+	@Ignore
 	@Test
 	public void testFeatureGroupsOnFeatureGraphPCM() {
 		System.out.println("Feature groups on feature graph - PCM");

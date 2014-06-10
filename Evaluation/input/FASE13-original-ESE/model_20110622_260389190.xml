@@ -1,14 +1,14 @@
-<feature_model name="Size">
+<feature_model name="Wheels">
 <feature_tree>
-:r Size (f_Size)
-	:m Engine (f_Engine)
+:r Wheels (f_Wheels)
 	:m Fuel (f_Fuel)
 	:m Car (f_Car)
-	:m Wheels (f_Wheels)
+	:m Size (f_Size)
+	:m Engine (f_Engine)
 	:g [1, *]
-		: Electric (f_Electric)
-		: Gas (f_Gas)
 		: Diesel (f_Diesel)
+		: Gas (f_Gas)
+		: Electric (f_Electric)
 	:g [1, 1]
 		: Four (f_Four)
 		: Three (f_Three)

@@ -1,48 +1,48 @@
-<feature_model name="Frases">
+<feature_model name="Armas">
 <feature_tree>
-:r Frases (f_Frases)
-	:m Norte (f_Norte)
-	:m Oeste (f_Oeste)
-	:m Leste (f_Leste)
-	:m Movimento Inimigo (f_Movimento_Inimigo)
-	:m Finalizacao (f_Finalizacao)
-	:m Sul (f_Sul)
-	:m Pontuacao (f_Pontuacao)
+:r Armas (f_Armas)
+	:m Frases (f_Frases)
+	:m Inimigo (f_Inimigo)
 	:m Jogo de Tiro (f_Jogo_de_Tiro)
 	:m Tema Visual (f_Tema_Visual)
 	:m Padrao (f_Padrao)
 	:m Efeito Musical (f_Efeito_Musical)
 	:m Musica Fundo (f_Musica_Fundo)
 	:m Barulho Tiro (f_Barulho_Tiro)
-	:m Armas (f_Armas)
+	:m Sul (f_Sul)
+	:m Norte (f_Norte)
+	:m Oeste (f_Oeste)
+	:m Leste (f_Leste)
+	:m Pontuacao (f_Pontuacao)
+	:m Movimento Inimigo (f_Movimento_Inimigo)
 	:m Movimento Principal (f_Movimento_Principal)
-	:m Inimigo (f_Inimigo)
-	:o Desafio (f_Desafio)
+	:m Finalizacao (f_Finalizacao)
 	:o Obstaculo (f_Obstaculo)
 		:g [1, 1]
 			: Base (f_Base)
 			: Parede (f_Parede)
 	:o Configuracao (f_Configuracao)
 		:g [1, 1]
-			: Vidas (f_Vidas)
-				:m Quantidade (f_Quantidade)
-			: Audio (f_Audio)
-				:m Volume (f_Volume)
+			: Quantidade (f_Quantidade)
+				:m Vidas (f_Vidas)
+			: Volume (f_Volume)
+				:m Audio (f_Audio)
+	:o Desafio (f_Desafio)
 	:g [1, *]
 		: Tempo Esgotado (f_Tempo_Esgotado)
 		: Ausencia Vidas (f_Ausencia_Vidas)
 	:g [1, 1]
+		: Misseis (f_Misseis)
 		: Projetil (f_Projetil)
 		: Laser (f_Laser)
-		: Misseis (f_Misseis)
 	:g [1, 1]
 		: Esquerda (f_Esquerda)
 		: Direita (f_Direita)
 	:g [1, 1]
-		: Aves (f_Aves)
-		: Aliens (f_Aliens)
-		: Monstros (f_Monstros)
 		: Nave (f_Nave)
+		: Aves (f_Aves)
+		: Monstros (f_Monstros)
+		: Aliens (f_Aliens)
 </feature_tree>
 <constraints>
 </constraints>

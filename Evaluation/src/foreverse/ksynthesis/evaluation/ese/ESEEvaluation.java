@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -15,6 +16,7 @@ import org.junit.Test;
 
 import com.csvreader.CsvWriter;
 import com.google.common.collect.Sets;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 import foreverse.ksynthesis.Heuristic;
 import foreverse.ksynthesis.InteractiveFMSynthesizer;
@@ -67,6 +69,7 @@ public class ESEEvaluation extends FMLTest {
 		heuristicLoader.closeHeuristics();
 	}
 	
+	@Ignore
 	@Test
 	public void testSPLOTforICSE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -89,7 +92,7 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println("Loading SPLOT feature models for ESE");
 		List<FeatureModelVariable> splotFMs = featureModelLoader.getSPLOTFeatureModels();
 		
-		evaluation(heuristics, thresholds, splotFMs, new File(OUTPUT_FOLDER + "ESE/SPLOT/"), false); // FIXME : compute with or groups
+		evaluation(heuristics, thresholds, splotFMs, new File(OUTPUT_FOLDER + "ESE/SPLOT/"), true);
 		
 		System.out.println();
 	}
@@ -106,6 +109,44 @@ public class ESEEvaluation extends FMLTest {
 		evaluation(heuristics, thresholds, pcmFMs, new File(OUTPUT_FOLDER + "ESE/PCMs/"), false);
 		
 		System.out.println();
+	}
+	
+	@Test
+	public void testFASEonSPLOT() throws IOException {
+		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
+		List<FeatureModelVariable> splotFeatureModels = featureModelLoader.getSPLOTFeatureModels();
+		List<FeatureModelVariable> faseFeatureModels = featureModelLoader.getFASEFeatureModels();
+
+		System.out.println("Computing score for FASE FMs");
+		CsvWriter writer = new CsvWriter(OUTPUT_FOLDER + "ESE/SPLOT/" + "FASE.csv");
+		writer.write("ID");
+		writer.write("precision");
+		writer.endRecord();
+
+		for (FeatureModelVariable fmSPLOT : splotFeatureModels) {
+			FeatureModelVariable fmFASE = null;
+			for (FeatureModelVariable correspondingFM : faseFeatureModels) {
+				if (correspondingFM.getCompleteIdentifier().equals(fmSPLOT.getCompleteIdentifier())) {
+					fmFASE = correspondingFM;
+					break;
+				}
+			}
+			
+//			Set<String> featuresSPLOT = fmSPLOT.getFm().getDiagram().features();
+//			Set<String> featuresFASE = fmFASE.getFm().getDiagram().features();
+//			if (featuresSPLOT.containsAll(featuresFASE) && featuresFASE.containsAll(featuresSPLOT)) {
+			
+			if (fmFASE != null) {
+				double precision = computePercentageOfCommonEdges(fmFASE, fmSPLOT);
+				writer.write(fmSPLOT.getCompleteIdentifier());
+				writer.write("" + precision);
+				writer.endRecord();
+			} else {
+				System.out.println(fmSPLOT.getCompleteIdentifier() + " was not found in FASE FMs");
+			}
+		}
+		
+		writer.close();
 	}
 
 	/**
@@ -233,16 +274,14 @@ public class ESEEvaluation extends FMLTest {
 			
 			ImplicationGraphMetrics bigMetrics = new ImplicationGraphMetrics();
 					
-
 			writer.write(fm.getCompleteIdentifier());
 			writer.write("" + fm.features().size());
 			writer.write("" + getDepth(fm));
 			writer.write("" + implicationGraph.edges().size());
 			writer.write("" + reducedImplicationGraph.edges().size());
-			writer.write("" + bigMetrics.minDegree(implicationGraph));
-			writer.write("" + bigMetrics.maxDegree(implicationGraph));
-			writer.write("" + bigMetrics.averageDegree(implicationGraph));
-			writer.write("" + bigMetrics.medianDegree(implicationGraph));
+			writer.write("" + bigMetrics.minOutdegree(implicationGraph));
+			writer.write("" + bigMetrics.maxOutdegree(implicationGraph));
+			writer.write("" + bigMetrics.averageOutdegree(implicationGraph));
 			writer.write("" + keptParents / ((double) fm.features().size()) );
 			writer.endRecord();
 		}
@@ -259,7 +298,6 @@ public class ESEEvaluation extends FMLTest {
 		writer.write("parent candidates (min)");
 		writer.write("parent candidates (max)");
 		writer.write("parent candidates (average)");
-		writer.write("parent candidates (median)");
 		writer.write("% parents kept after reducing BIG");
 		writer.endRecord();
 	}
@@ -569,7 +607,7 @@ public class ESEEvaluation extends FMLTest {
 			List<Set<String>> siblingsList = convertInSetOfString(hierarchy.getSiblingSetsInBFS());
 			
 			// Mutex
-			Set<FGroup> mutexGroups = null; 
+			Set<FGroup> mutexGroups = new HashSet<FGroup>();
 			if (reduceBIG && computeOrGroups) {
 				mutexGroups = fm.toGeneralizedNotation().getMutexGroups();
 			} else if (reduceBIG && !computeOrGroups){
@@ -580,7 +618,7 @@ public class ESEEvaluation extends FMLTest {
 			computeStatsOnGroups(writer, mutexGroups, hierarchy, siblingsList);
 			
 			// Xor
-			Set<FGroup> xorGroups = null;
+			Set<FGroup> xorGroups = new HashSet<FGroup>();
 			if (reduceBIG && computeOrGroups) {
 				xorGroups = fm.toGeneralizedNotation().getXorGroups();
 			} else if (reduceBIG && !computeOrGroups){
@@ -592,13 +630,24 @@ public class ESEEvaluation extends FMLTest {
 			computeStatsOnGroups(writer, xorGroups, hierarchy, siblingsList);
 			
 			// Or
+			Set<FGroup> orGroups = new HashSet<FGroup>();
 			if (computeOrGroups) {
-				Set<FGroup> orGroups = fm.computeOrGroups();
-				computeStatsOnGroups(writer, orGroups, hierarchy, siblingsList);
+				 orGroups = fm.computeOrGroups();
 			}
+			computeStatsOnGroups(writer, orGroups, hierarchy, siblingsList);
+			
+			
+			// All groups
+			Set<FGroup> allGroups = new HashSet<FGroup>();
+			allGroups.addAll(mutexGroups);
+			allGroups.addAll(xorGroups);
+			allGroups.addAll(orGroups);
+			computeStatsOnGroups(writer, allGroups, hierarchy, siblingsList);
 			
 			writer.endRecord();
 			writer.flush();
+			
+			_builder.reset(); // reset builder to avoid garbage collection
 		}
 		
 	}
@@ -608,6 +657,7 @@ public class ESEEvaluation extends FMLTest {
 		writeHeaderFGroupUtils(writer, "Mutex");
 		writeHeaderFGroupUtils(writer, "Xor");
 		writeHeaderFGroupUtils(writer, "Or");
+		writeHeaderFGroupUtils(writer, "All");
 		writer.endRecord();
 		
 	}

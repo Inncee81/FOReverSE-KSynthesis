@@ -1,24 +1,24 @@
-<feature_model name="Load">
+<feature_model name="Text Editing">
 <feature_tree>
-:r Load (f_Load)
-	:m Text Editor (f_Text_Editor)
+:r Text Editing (f_Text_Editing)
 	:m Save (f_Save)
-	:m Text Editing (f_Text_Editing)
+	:m Text Editor (f_Text_Editor)
 	:m File Operations (f_File_Operations)
+	:m Load (f_Load)
 	:o Code Editing (f_Code_Editing)
 		:o Syntax Highlighting (f_Syntax_Highlighting)
 			:g [1, 1]
+				: Java (f_Java)
 				: Python (f_Python)
 				: Haskell (f_Haskell)
-				: Java (f_Java)
 	:o Print (f_Print)
 		:o RTF Editing (f_RTF_Editing)
 </feature_tree>
 <constraints>
-constraint_1:~f_Syntax_Highlighting or ~f_RTF_Editing
-constraint_2:~f_Code_Editing or ~f_RTF_Editing
+constraint_1:~f_Code_Editing or ~f_RTF_Editing
+constraint_2:~f_Haskell or ~f_RTF_Editing
 constraint_3:~f_Python or ~f_RTF_Editing
 constraint_4:~f_Java or ~f_RTF_Editing
-constraint_5:~f_RTF_Editing or ~f_Haskell
+constraint_5:~f_Syntax_Highlighting or ~f_RTF_Editing
 </constraints>
 </feature_model>

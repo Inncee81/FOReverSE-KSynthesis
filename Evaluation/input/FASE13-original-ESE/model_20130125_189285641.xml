@@ -1,24 +1,24 @@
-<feature_model name="EmailFunction">
+<feature_model name="Chinese">
 <feature_tree>
-:r EmailFunction (f_EmailFunction)
-	:m Language (f_Language)
-	:m Chinese (f_Chinese)
-	:m QuestionAndAnswer (f_QuestionAndAnswer)
-	:m Online Exam PL (f_Online_Exam_PL)
-	:m English (f_English)
-	:m GeneralFunction (f_GeneralFunction)
-	:m ExerciseMode (f_ExerciseMode)
-	:m QuestionType (f_QuestionType)
-	:m ShortAnswer (f_ShortAnswer)
-	:m Choice (f_Choice)
+:r Chinese (f_Chinese)
 	:m Mode (f_Mode)
+	:m EmailFunction (f_EmailFunction)
+	:m English (f_English)
+	:m Choice (f_Choice)
+	:m Language (f_Language)
+	:m ExerciseMode (f_ExerciseMode)
+	:m ShortAnswer (f_ShortAnswer)
+	:m GeneralFunction (f_GeneralFunction)
+	:m Online Exam PL (f_Online_Exam_PL)
+	:m QuestionType (f_QuestionType)
+	:m QuestionAndAnswer (f_QuestionAndAnswer)
 	:o TestMode (f_TestMode)
-		:o Customized (f_Customized)
-			:m TestPaperGeneration (f_TestPaperGeneration)
+		:o TestPaperGeneration (f_TestPaperGeneration)
+			:m Customized (f_Customized)
 			:o SelectedFromRepository (f_SelectedFromRepository)
 		:g [1, *]
-			: RandomizedQuestion (f_RandomizedQuestion)
 			: SelectedQuestion (f_SelectedQuestion)
+			: RandomizedQuestion (f_RandomizedQuestion)
 </feature_tree>
 <constraints>
 </constraints>

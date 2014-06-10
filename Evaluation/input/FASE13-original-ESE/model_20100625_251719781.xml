@@ -13,9 +13,9 @@
 		:o Voice Dial (f_Voice_Dial)
 		:o Call Filter (f_Call_Filter)
 	:o DataTransfer (f_DataTransfer)
-		:o GPRS (f_GPRS)
 		:o IrDA (f_IrDA)
 		:o Bluetooth (f_Bluetooth)
+		:o GPRS (f_GPRS)
 </feature_tree>
 <constraints>
 </constraints>

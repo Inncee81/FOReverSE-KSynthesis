@@ -1,17 +1,17 @@
 <feature_model name="Configuracao">
 <feature_tree>
 :r Configuracao (f_Configuracao)
-	:m PhysEval (f_PhysEval)
 	:m Cadastro de Alunos (f_Cadastro_de_Alunos)
 	:m Anamnese (f_Anamnese)
+	:m PhysEval (f_PhysEval)
 	:m Agente Gerador (f_Agente_Gerador)
 	:o Agente Notificador (f_Agente_Notificador)
 	:g [1, *]
+		: Qualitativo (f_Qualitativo)
+			:m Qol (f_Qol)
 		: Completo (f_Completo)
-		: Qol (f_Qol)
-			:m Qualitativo (f_Qualitativo)
-		: Compoiscao Corporal (f_Compoiscao_Corporal)
-			:m Quantitativo (f_Quantitativo)
+		: Quantitativo (f_Quantitativo)
+			:m Compoiscao Corporal (f_Compoiscao_Corporal)
 			:o Perimetria (f_Perimetria)
 			:o Ergometria (f_Ergometria)
 			:o Teste Postural (f_Teste_Postural)

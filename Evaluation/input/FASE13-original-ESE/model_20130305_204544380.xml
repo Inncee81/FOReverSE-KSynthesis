@@ -1,13 +1,13 @@
-<feature_model name="Alarm System">
+<feature_model name="Onlince Access">
 <feature_tree>
-:r Alarm System (f_Alarm_System)
-	:m Onlince Access (f_Onlince_Access)
+:r Onlince Access (f_Onlince_Access)
+	:m Alarm System (f_Alarm_System)
 	:m User Interface (f_User_Interface)
 	:o Storage (f_Storage)
 		:o Camera (f_Camera)
 			:g [1, *]
-				: Video (f_Video)
 				: Photo (f_Photo)
+				: Video (f_Video)
 		:g [1, 1]
 			: Standard (f_Standard)
 			: High (f_High)
@@ -15,8 +15,8 @@
 		: Manual Release (f_Manual_Release)
 		: Vibration Detector (f_Vibration_Detector)
 	:g [1, 1]
-		: Siren (f_Siren)
 		: Warning Light (f_Warning_Light)
+		: Siren (f_Siren)
 </feature_tree>
 <constraints>
 constraint_1:~f_Video or f_High

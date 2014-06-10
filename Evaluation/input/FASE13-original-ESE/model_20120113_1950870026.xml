@@ -1,9 +1,9 @@
-<feature_model name="eShop">
+<feature_model name="security">
 <feature_tree>
-:r eShop (f_eShop)
-	:m security (f_security)
+:r security (f_security)
 	:m catalogue (f_catalogue)
 	:m payment (f_payment)
+	:m eShop (f_eShop)
 	:o search (f_search)
 	:g [1, *]
 		: bank trasnsfer (f_bank_trasnsfer)

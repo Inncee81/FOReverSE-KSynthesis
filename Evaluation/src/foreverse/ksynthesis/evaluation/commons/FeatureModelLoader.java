@@ -18,10 +18,14 @@ public class FeatureModelLoader {
 	private static final String SPLOT_FOLDER = "input/splot-models-2014-01-30";
 	private static final String SPLOT_INCLUDE = "input/splot-models-2014-01-30/ESE_meaningful_FMs.txt";
 	private static final String SPLOT_EXCLUDE = "input/splot-models-2014-01-30/ESE_excluded_FMs.txt";
-
+	private static final String	FASE_EXCLUDE = "input/splot-models-2014-01-30/ESE_excluded_FMs_FASE.txt";
+	
 	private static final String SPLOT_FOLDER_ICSE = "input/splot-models-2012-08-07";
 	
 	private static final String PCM_FOLDER = "input/ICSE2014-PCMs";
+	
+	private static final String FASE_FOLDER = "input/FASE13-original-ESE";
+	
 	
 	private FMLShell _shell;
 	private BDDBuilder<String> _builder;
@@ -134,6 +138,7 @@ public class FeatureModelLoader {
 		if (splotFMs == null) {
 			List<String> includedFMs = readFMNamesFromFile(SPLOT_INCLUDE);
 			List<String> excludedFMs = readFMNamesFromFile(SPLOT_EXCLUDE);
+			excludedFMs.addAll(readFMNamesFromFile(FASE_EXCLUDE));
 			splotFMs = loadFeatureModelFolder(SPLOT_FOLDER, ".xml", includedFMs, excludedFMs, "");
 			System.out.println(splotFMs.size() + " FMs loaded from SPLOT");
 		}
@@ -159,6 +164,15 @@ public class FeatureModelLoader {
 //		}
 
 		return pcmFMs;
+	}
+	
+	public List<FeatureModelVariable> getFASEFeatureModels() {
+		List<String> includedFMs = readFMNamesFromFile(SPLOT_INCLUDE);
+		List<String> excludedFMs = readFMNamesFromFile(SPLOT_EXCLUDE);
+		excludedFMs.addAll(readFMNamesFromFile(FASE_EXCLUDE));
+		List<FeatureModelVariable> pcmFASE = loadFeatureModelFolder(FASE_FOLDER, ".xml", includedFMs, excludedFMs, "");
+		System.out.println(pcmFASE.size() + " FMs loaded from FASE");
+		return pcmFASE;
 	}
 	
 	

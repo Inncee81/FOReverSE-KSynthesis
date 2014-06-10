@@ -1,17 +1,17 @@
-<feature_model name="gerenciar-evento">
+<feature_model name="AllSports">
 <feature_tree>
-:r gerenciar-evento (f_gerenciar_evento)
+:r AllSports (f_AllSports)
 	:m aprovar-pedido (f_aprovar_pedido)
-	:m AllSports (f_AllSports)
+	:m gerenciar-evento (f_gerenciar_evento)
 	:o buscar-novos-eventos (f_buscar_novos_eventos)
 		:g [1, *]
 			: manual (f_manual)
 			: automatica (f_automatica)
 	:o recrutar-pessoal (f_recrutar_pessoal)
 		:g [1, *]
-			: misto (f_misto)
-			: externo (f_externo)
 			: interno (f_interno)
+			: externo (f_externo)
+			: misto (f_misto)
 </feature_tree>
 <constraints>
 </constraints>
