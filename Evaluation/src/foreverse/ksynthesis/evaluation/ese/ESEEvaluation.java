@@ -97,7 +97,6 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
-	@Ignore
 	@Test
 	public void testPCMforESE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -111,6 +110,7 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
+	@Ignore
 	@Test
 	public void testFASEonSPLOT() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -118,11 +118,18 @@ public class ESEEvaluation extends FMLTest {
 		List<FeatureModelVariable> faseFeatureModels = featureModelLoader.getFASEFeatureModels();
 
 		System.out.println("Computing score for FASE FMs");
-		CsvWriter writer = new CsvWriter(OUTPUT_FOLDER + "ESE/SPLOT/" + "FASE.csv");
+		
+		// Create output directory
+		File output = new File(OUTPUT_FOLDER + "ESE/SPLOT/" + "FASE.csv");
+		output.createNewFile();
+		
+		// Create CSV writer
+		CsvWriter writer = new CsvWriter(output.getAbsolutePath());
 		writer.write("ID");
-		writer.write("precision");
+		writer.write("FASE - Full Synthesis");
 		writer.endRecord();
 
+		// Compare FASE and SPLOT FMs
 		for (FeatureModelVariable fmSPLOT : splotFeatureModels) {
 			FeatureModelVariable fmFASE = null;
 			for (FeatureModelVariable correspondingFM : faseFeatureModels) {
@@ -146,6 +153,7 @@ public class ESEEvaluation extends FMLTest {
 			}
 		}
 		
+		// Close CSV writer
 		writer.close();
 	}
 
@@ -162,71 +170,71 @@ public class ESEEvaluation extends FMLTest {
 	public void evaluation(List<Heuristic> heuristics, HashMap<Heuristic, Double> thresholds, List<FeatureModelVariable> fms, File outputFolder, boolean computeOrGroups) throws IOException {
 		
 		
-		// Stats
-		System.out.println("Computing stats");
-		outputFolder.mkdirs();
-		
-		CsvWriter writerStats = new CsvWriter(outputFolder.getAbsolutePath() + "/stats.csv");
-		testFeatureModelStats(writerStats, fms);
-		writerStats.close();
-
-		// Full synthesis and TOP N
-		boolean random = false;
-		System.out.println("Computing top N and full synthesis");
-		CsvWriter writerSynthesis = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesis.csv");
-		testSynthesis(writerSynthesis, heuristics, fms, false, random, computeOrGroups);
-		writerSynthesis.close();
-
-		System.out.println("Computing top N and full synthesis on RBIG");
-		CsvWriter writerSynthesisRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesisRBIG.csv");
-		testSynthesis(writerSynthesisRBIG, heuristics, fms, true, random, computeOrGroups);
-		writerSynthesisRBIG.close();
-
-		// Clustering
-		System.out.println("Computing clusters");
-		CsvWriter writerClustering = new CsvWriter(outputFolder.getAbsolutePath() + "/clustering.csv");
-		testClustering(writerClustering, heuristics, fms, thresholds, false, random);
-		writerClustering.close();
-
-		System.out.println("Computing clusters on RBIG");
-		CsvWriter writerClusteringRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/clusteringRBIG.csv");
-		testClustering(writerClusteringRBIG, heuristics, fms, thresholds, true, random);
-		writerClusteringRBIG.close();
-		
-		
-		// RANDOM
-		random = true;
-		List<Heuristic> randomHeuristic = new ArrayList<Heuristic>();
-		randomHeuristic.add(new RandomMetric());
-		// Full synthesis and TOP N
-		System.out.println("Computing top N and full synthesis (random)");
-		CsvWriter writerSynthesisRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesis.csv");
-		testSynthesis(writerSynthesisRandom, randomHeuristic, fms, false, random, computeOrGroups);
-		writerSynthesisRandom.close();
-
-		System.out.println("Computing top N and full synthesis on RBIG (random)");
-		CsvWriter writerSynthesisRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesisRBIG.csv");
-		testSynthesis(writerSynthesisRBIGRandom, randomHeuristic, fms, true, random, computeOrGroups);
-		writerSynthesisRBIGRandom.close();
-
-		// Clustering
-		System.out.println("Computing clusters (random)");
-		CsvWriter writerClusteringRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clustering.csv");
-		testClustering(writerClusteringRandom, randomHeuristic, fms, thresholds, false, random);
-		writerClusteringRandom.close();
-
-		System.out.println("Computing clusters on RBIG (random)");
-		CsvWriter writerClusteringRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clusteringRBIG.csv");
-		testClustering(writerClusteringRBIGRandom, randomHeuristic, fms, thresholds, true, random);
-		writerClusteringRBIGRandom.close();
-		
-		
-		
-		// Cliques
-		System.out.println("Cliques as clusters");
-		CsvWriter writerCliques = new CsvWriter(outputFolder.getAbsolutePath() + "/cliques.csv");
-		testCliques(writerCliques, fms);
-		writerCliques.close();
+//		// Stats
+//		System.out.println("Computing stats");
+//		outputFolder.mkdirs();
+//		
+//		CsvWriter writerStats = new CsvWriter(outputFolder.getAbsolutePath() + "/stats.csv");
+//		testFeatureModelStats(writerStats, fms);
+//		writerStats.close();
+//
+//		// Full synthesis and TOP N
+//		boolean random = false;
+//		System.out.println("Computing top N and full synthesis");
+//		CsvWriter writerSynthesis = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesis.csv");
+//		testSynthesis(writerSynthesis, heuristics, fms, false, random, computeOrGroups);
+//		writerSynthesis.close();
+//
+//		System.out.println("Computing top N and full synthesis on RBIG");
+//		CsvWriter writerSynthesisRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesisRBIG.csv");
+//		testSynthesis(writerSynthesisRBIG, heuristics, fms, true, random, computeOrGroups);
+//		writerSynthesisRBIG.close();
+//
+//		// Clustering
+//		System.out.println("Computing clusters");
+//		CsvWriter writerClustering = new CsvWriter(outputFolder.getAbsolutePath() + "/clustering.csv");
+//		testClustering(writerClustering, heuristics, fms, thresholds, false, random);
+//		writerClustering.close();
+//
+//		System.out.println("Computing clusters on RBIG");
+//		CsvWriter writerClusteringRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/clusteringRBIG.csv");
+//		testClustering(writerClusteringRBIG, heuristics, fms, thresholds, true, random);
+//		writerClusteringRBIG.close();
+//		
+//		
+//		// RANDOM
+//		random = true;
+//		List<Heuristic> randomHeuristic = new ArrayList<Heuristic>();
+//		randomHeuristic.add(new RandomMetric());
+//		// Full synthesis and TOP N
+//		System.out.println("Computing top N and full synthesis (random)");
+//		CsvWriter writerSynthesisRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesis.csv");
+//		testSynthesis(writerSynthesisRandom, randomHeuristic, fms, false, random, computeOrGroups);
+//		writerSynthesisRandom.close();
+//
+//		System.out.println("Computing top N and full synthesis on RBIG (random)");
+//		CsvWriter writerSynthesisRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesisRBIG.csv");
+//		testSynthesis(writerSynthesisRBIGRandom, randomHeuristic, fms, true, random, computeOrGroups);
+//		writerSynthesisRBIGRandom.close();
+//
+//		// Clustering
+//		System.out.println("Computing clusters (random)");
+//		CsvWriter writerClusteringRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clustering.csv");
+//		testClustering(writerClusteringRandom, randomHeuristic, fms, thresholds, false, random);
+//		writerClusteringRandom.close();
+//
+//		System.out.println("Computing clusters on RBIG (random)");
+//		CsvWriter writerClusteringRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clusteringRBIG.csv");
+//		testClustering(writerClusteringRBIGRandom, randomHeuristic, fms, thresholds, true, random);
+//		writerClusteringRBIGRandom.close();
+//		
+//		
+//		
+//		// Cliques
+//		System.out.println("Cliques as clusters");
+//		CsvWriter writerCliques = new CsvWriter(outputFolder.getAbsolutePath() + "/cliques.csv");
+//		testCliques(writerCliques, fms);
+//		writerCliques.close();
 		
 		// Feature groups
 		System.out.println("Feature groups as clusters");
@@ -647,7 +655,7 @@ public class ESEEvaluation extends FMLTest {
 			writer.endRecord();
 			writer.flush();
 			
-			_builder.reset(); // reset builder to avoid garbage collection
+//			_builder.reset(); // reset builder to avoid garbage collection
 		}
 		
 	}
