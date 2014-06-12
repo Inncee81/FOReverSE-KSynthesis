@@ -97,6 +97,7 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
+	@Ignore
 	@Test
 	public void testPCMforESE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -110,7 +111,6 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
-	@Ignore
 	@Test
 	public void testFASEonSPLOT() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);

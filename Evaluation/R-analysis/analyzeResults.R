@@ -1,16 +1,8 @@
-
-readCSV <- function(dir,path) {
-  fullPath = paste(dir,path,sep="")
-  if (file.exists(fullPath)) {
-    read.csv(fullPath,check.name=FALSE, na.strings="N/A") 
-  } else {
-    NULL
-  }
-}
+source("utils.R")
 
 computeStats <- function(input, output, header) {
   if (!is.null(input)) {
-    data <- input[,-1]
+    data <- input[,-1,drop=FALSE]
     mean <- colMeans(data, na.rm=TRUE)
     median <- apply(data, 2, median, na.rm=TRUE)
     min <- apply(data, 2, min, na.rm=TRUE)
@@ -24,7 +16,7 @@ computeStats <- function(input, output, header) {
   }
 }
 
-computeAllStats <- function(dir) {
+computeAllStats <- function(dir, fase=FALSE) {
   
   # create output file
   output <- paste(dir,"results.csv",sep="")
@@ -35,8 +27,12 @@ computeAllStats <- function(dir) {
   
   computeStats(readCSV(dir,"fullsynthesis.csv"),output,"Full synthesis")
   computeStats(readCSV(dir,"random_fullsynthesis.csv"),output,"Full synthesis (random)")
+  
   computeStats(readCSV(dir,"fullsynthesisRBIG.csv"),output,"Full synthesis on reduced BIG")
   computeStats(readCSV(dir,"random_fullsynthesisRBIG.csv"),output,"Full synthesis on reduced BIG (random)")
+  if (fase) {
+    computeStats(readCSV(dir,"FASE.csv"),output,"Full synthesis with FASE")
+  }
   
   
   computeStats(readCSV(dir,"clustering.csv"),output,"Clusters")
@@ -53,7 +49,7 @@ computeAllStats <- function(dir) {
 
 
 computeAllStats("../output/ICSE/")
-computeAllStats("../output/ESE/SPLOT/")
+computeAllStats("../output/ESE/SPLOT/", fase=TRUE)
 computeAllStats("../output/ESE/PCMs/")
 
 

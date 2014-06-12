@@ -1,0 +1,247 @@
+Stats on input FMs
+"","mean","median","min","max"
+"#features",17.6129032258065,15,9,56
+"depth of hierarchy",3.78494623655914,4,3,11
+"#edges in BIG",138.913978494624,79,20,1513
+"#edges in reduced BIG",56.5698924731183,33,0,449
+"parent candidates (min)",5.12903225806452,4,0,21
+"parent candidates (max)",8.3010752688172,7,2,36
+"parent candidates (average)",6.43661142706925,5.5,1.53846153846154,27.0178571428571
+"% parents kept after reducing BIG",0.563328924910802,0.588235294117647,0,0.9375
+
+Full synthesis
+"","mean","median","min","max"
+"Smith Waterman (Simmetrics) - TOP 1",0.328932126095529,0.294117647058824,0,1
+"Smith Waterman (Simmetrics) - TOP 2",0.517953224695768,0.5,0,1
+"Smith Waterman (Simmetrics) - TOP 3",0.666621635351914,0.684210526315789,0,1
+"Smith Waterman (Simmetrics) - TOP 4",0.768625579872633,0.833333333333333,0.181818181818182,1
+"Smith Waterman (Simmetrics) - TOP 5",0.830572845093956,0.928571428571429,0.236363636363636,1
+"Smith Waterman (Simmetrics) - Full Synthesis",0.296784193531019,0.25,0,1
+"Levenshtein (Simmetrics) - TOP 1",0.294780208522701,0.25,0,1
+"Levenshtein (Simmetrics) - TOP 2",0.485633256581513,0.5,0,1
+"Levenshtein (Simmetrics) - TOP 3",0.665926221628511,0.727272727272727,0,1
+"Levenshtein (Simmetrics) - TOP 4",0.748175700106583,0.818181818181818,0,1
+"Levenshtein (Simmetrics) - TOP 5",0.819953417783861,1,0.0909090909090909,1
+"Levenshtein (Simmetrics) - Full Synthesis",0.276637526632933,0.222222222222222,0,1
+"Wu & Palmer (WordNet) - TOP 1",0.321294849291143,0.285714285714286,0,1
+"Wu & Palmer (WordNet) - TOP 2",0.506956953037632,0.5,0,1
+"Wu & Palmer (WordNet) - TOP 3",0.655653557855592,0.692307692307692,0,1
+"Wu & Palmer (WordNet) - TOP 4",0.744038572017583,0.785714285714286,0,1
+"Wu & Palmer (WordNet) - TOP 5",0.821283544405195,0.923076923076923,0.109090909090909,1
+"Wu & Palmer (WordNet) - Full Synthesis",0.315727681014229,0.285714285714286,0,1
+"Path Length (WordNet) - TOP 1",0.335488799355252,0.333333333333333,0,1
+"Path Length (WordNet) - TOP 2",0.524741109158961,0.5,0,1
+"Path Length (WordNet) - TOP 3",0.665121299401179,0.705882352941177,0,1
+"Path Length (WordNet) - TOP 4",0.751823629701453,0.821428571428571,0,1
+"Path Length (WordNet) - TOP 5",0.818553181573039,0.954545454545455,0.0625,1
+"Path Length (WordNet) - Full Synthesis",0.321403693111774,0.304347826086957,0,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 1",0.319251334837511,0.3125,0,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 2",0.521663677364147,0.551724137931034,0,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 3",0.650772164618706,0.692307692307692,0.0363636363636364,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 4",0.751170347940675,0.875,0.0363636363636364,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 5",0.821311210812689,1,0.0727272727272727,1
+"Wikipedia Miner metric (db_wikipedia) - Full Synthesis",0.309551202946083,0.294117647058824,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 1",0.316359299141181,0.3,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 2",0.507042416820694,0.511627906976744,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 3",0.654004885399582,0.666666666666667,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 4",0.750285785130107,0.857142857142857,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 5",0.817118304954523,0.9375,0.109090909090909,1
+"Wikipedia Miner metric (db_wiktionary) - Full Synthesis",0.296030227821249,0.285714285714286,0,0.9375
+"Transitive reduction metric - TOP 1",0.33190636137694,0.333333333333333,0,1
+"Transitive reduction metric - TOP 2",0.516954698886383,0.476190476190476,0,1
+"Transitive reduction metric - TOP 3",0.652750910062646,0.692307692307692,0,1
+"Transitive reduction metric - TOP 4",0.75357599624115,0.857142857142857,0,1
+"Transitive reduction metric - TOP 5",0.823227858134004,1,0,1
+"Transitive reduction metric - Full Synthesis",0.305844941348266,0.25,0,1
+
+Full synthesis (random)
+"","mean","median","min","max"
+"run",499.5,499.5,0,999
+"Random - TOP 1",0.226851594587237,0.191326530612245,0.0385493765222504,0.666666666666667
+"Random - TOP 2",0.434489369388636,0.38265306122449,0.0770987530445009,1
+"Random - TOP 3",0.598548375946195,0.573979591836735,0.115648129566751,1
+"Random - TOP 4",0.71204357419335,0.733333333333333,0.154197506089002,1
+"Random - TOP 5",0.792555365361235,0.891774891774892,0.192746882611252,1
+"Random - Full Synthesis",0.21301431718298,0.166666666666667,0,1
+
+Full synthesis on reduced BIG
+"","mean","median","min","max"
+"Smith Waterman (Simmetrics) - TOP 1",0.367221458410131,0.357142857142857,0,1
+"Smith Waterman (Simmetrics) - TOP 2",0.482003849912801,0.444444444444444,0,1
+"Smith Waterman (Simmetrics) - TOP 3",0.553598118082388,0.545454545454545,0,1
+"Smith Waterman (Simmetrics) - TOP 4",0.595715004547621,0.625,0,1
+"Smith Waterman (Simmetrics) - TOP 5",0.612156333072991,0.636363636363636,0,1
+"Smith Waterman (Simmetrics) - Full Synthesis",0.350704342466472,0.333333333333333,0,1
+"Levenshtein (Simmetrics) - TOP 1",0.360764242894129,0.35,0,1
+"Levenshtein (Simmetrics) - TOP 2",0.477947348892954,0.476190476190476,0,1
+"Levenshtein (Simmetrics) - TOP 3",0.558979122669746,0.555555555555556,0,1
+"Levenshtein (Simmetrics) - TOP 4",0.583829734342761,0.619047619047619,0,1
+"Levenshtein (Simmetrics) - TOP 5",0.611513768829805,0.666666666666667,0,1
+"Levenshtein (Simmetrics) - Full Synthesis",0.343348358812855,0.304347826086957,0,1
+"Wu & Palmer (WordNet) - TOP 1",0.372007014971749,0.348837209302326,0,1
+"Wu & Palmer (WordNet) - TOP 2",0.479897529771636,0.454545454545455,0,1
+"Wu & Palmer (WordNet) - TOP 3",0.559094075500034,0.5625,0,1
+"Wu & Palmer (WordNet) - TOP 4",0.587758024421763,0.625,0,1
+"Wu & Palmer (WordNet) - TOP 5",0.615756490653775,0.636363636363636,0,1
+"Wu & Palmer (WordNet) - Full Synthesis",0.366738851706761,0.346153846153846,0,1
+"Path Length (WordNet) - TOP 1",0.380663005689809,0.357142857142857,0,1
+"Path Length (WordNet) - TOP 2",0.482873648435123,0.454545454545455,0,1
+"Path Length (WordNet) - TOP 3",0.567024331179727,0.583333333333333,0,1
+"Path Length (WordNet) - TOP 4",0.594245685124891,0.625,0,1
+"Path Length (WordNet) - TOP 5",0.613824400115175,0.666666666666667,0,1
+"Path Length (WordNet) - Full Synthesis",0.371104585158345,0.346153846153846,0,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 1",0.365098953364297,0.352941176470588,0,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 2",0.489563664912206,0.470588235294118,0,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 3",0.552191951964938,0.571428571428571,0,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 4",0.585790560463438,0.625,0,1
+"Wikipedia Miner metric (db_wikipedia) - TOP 5",0.610020417294414,0.642857142857143,0,1
+"Wikipedia Miner metric (db_wikipedia) - Full Synthesis",0.36071478547919,0.357142857142857,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 1",0.379952317003913,0.380952380952381,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 2",0.483540662354251,0.458333333333333,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 3",0.550211642264426,0.545454545454545,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 4",0.58363127837856,0.625,0,1
+"Wikipedia Miner metric (db_wiktionary) - TOP 5",0.612645776249794,0.666666666666667,0,1
+"Wikipedia Miner metric (db_wiktionary) - Full Synthesis",0.36054724029587,0.347826086956522,0,1
+"Transitive reduction metric - TOP 1",0.329270290109382,0.315789473684211,0,1
+"Transitive reduction metric - TOP 2",0.433281107486334,0.384615384615385,0,1
+"Transitive reduction metric - TOP 3",0.526362905071358,0.526315789473684,0,1
+"Transitive reduction metric - TOP 4",0.575401262900811,0.625,0,1
+"Transitive reduction metric - TOP 5",0.598663994987072,0.666666666666667,0,1
+"Transitive reduction metric - Full Synthesis",0.320674605166476,0.285714285714286,0,1
+
+Full synthesis on reduced BIG (random)
+"","mean","median","min","max"
+"run",499.5,499.5,0,999
+"Random - TOP 1",0.320711924207737,0.3,0,1
+"Random - TOP 2",0.439584984185035,0.416666666666667,0,1
+"Random - TOP 3",0.525886425482744,0.5,0,1
+"Random - TOP 4",0.570517825518989,0.6,0,1
+"Random - TOP 5",0.599314441868331,0.636363636363636,0,1
+"Random - Full Synthesis",0.30556066210748,0.275862068965517,0,1
+
+Clusters
+"","mean","median","min","max"
+"Smith Waterman (Simmetrics) - #clusters",4.12903225806452,4,0,15
+"Smith Waterman (Simmetrics) - average cluster size",2.81310377197474,2.6,0,6
+"Smith Waterman (Simmetrics) - % correct clusters",0.507518115942029,0.5,0,1
+"Smith Waterman (Simmetrics) - % features in a correct cluster",0.291781537919299,0.235294117647059,0,0.923076923076923
+"Levenshtein (Simmetrics) - #clusters",4.05376344086022,4,1,13
+"Levenshtein (Simmetrics) - average cluster size",2.77740458466265,2.5,2,5.5
+"Levenshtein (Simmetrics) - % correct clusters",0.52013601691021,0.5,0,1
+"Levenshtein (Simmetrics) - % features in a correct cluster",0.300010542859337,0.294117647058824,0,0.785714285714286
+"Wu & Palmer (WordNet) - #clusters",2.73118279569892,2,0,12
+"Wu & Palmer (WordNet) - average cluster size",2.33072623314559,2,0,6
+"Wu & Palmer (WordNet) - % correct clusters",0.579088224437062,0.5,0,1
+"Wu & Palmer (WordNet) - % features in a correct cluster",0.188282213765603,0.181818181818182,0,0.7
+"Path Length (WordNet) - #clusters",2.39784946236559,2,0,12
+"Path Length (WordNet) - average cluster size",2.15190732206861,2,0,8
+"Path Length (WordNet) - % correct clusters",0.701195767195767,0.8,0,1
+"Path Length (WordNet) - % features in a correct cluster",0.219732065050368,0.181818181818182,0,0.8
+"Wikipedia Miner metric (db_wikipedia) - #clusters",3.26881720430108,3,0,12
+"Wikipedia Miner metric (db_wikipedia) - average cluster size",2.85571847507331,2.66666666666667,0,6.5
+"Wikipedia Miner metric (db_wikipedia) - % correct clusters",0.545520421607378,0.5,0,1
+"Wikipedia Miner metric (db_wikipedia) - % features in a correct cluster",0.266175532275919,0.2,0,0.8
+"Wikipedia Miner metric (db_wiktionary) - #clusters",2.83870967741935,3,0,11
+"Wikipedia Miner metric (db_wiktionary) - average cluster size",2.31121739670127,2.22222222222222,0,5
+"Wikipedia Miner metric (db_wiktionary) - % correct clusters",0.641847041847042,0.666666666666667,0,1
+"Wikipedia Miner metric (db_wiktionary) - % features in a correct cluster",0.234914276897012,0.2,0,0.7
+"Transitive reduction metric - #clusters",2.24731182795699,2,1,6
+"Transitive reduction metric - average cluster size",2.7910394265233,3,2.25,4
+"Transitive reduction metric - % correct clusters",0.365232974910394,0.333333333333333,0,1
+"Transitive reduction metric - % features in a correct cluster",0.145592640192487,0.0967741935483871,0,0.75
+
+Clusters (random)
+"","mean","median","min","max"
+"run",499.5,499.5,0,999
+"Random - #clusters",6.24535483870968,5,0,27
+"Random - average cluster size",2.15674107729694,2.125,0,4
+"Random - % correct clusters",0.269752965770761,0.25,0,1
+"Random - % features in a correct cluster",0.182818798516852,0.16,0,1
+
+Clusters on reduced BIG
+"","mean","median","min","max"
+"Smith Waterman (Simmetrics) - #clusters",2.83870967741935,3,0,9
+"Smith Waterman (Simmetrics) - average cluster size",2.38559907834101,2.28571428571429,0,6
+"Smith Waterman (Simmetrics) - % correct clusters",0.687200073827981,0.75,0,1
+"Smith Waterman (Simmetrics) - % features in a correct cluster",0.261787600118574,0.214285714285714,0,0.923076923076923
+"Levenshtein (Simmetrics) - #clusters",2.94623655913978,3,0,8
+"Levenshtein (Simmetrics) - average cluster size",2.42443676395289,2.375,0,5.5
+"Levenshtein (Simmetrics) - % correct clusters",0.664941144997325,0.75,0,1
+"Levenshtein (Simmetrics) - % features in a correct cluster",0.275829896447591,0.241379310344828,0,0.785714285714286
+"Wu & Palmer (WordNet) - #clusters",2.13978494623656,2,0,10
+"Wu & Palmer (WordNet) - average cluster size",2.00035842293907,2,0,4
+"Wu & Palmer (WordNet) - % correct clusters",0.666877637130802,0.666666666666667,0,1
+"Wu & Palmer (WordNet) - % features in a correct cluster",0.171731600950134,0.166666666666667,0,0.7
+"Path Length (WordNet) - #clusters",1.86021505376344,1,0,11
+"Path Length (WordNet) - average cluster size",1.91899874319229,2,0,8
+"Path Length (WordNet) - % correct clusters",0.76391683433937,1,0,1
+"Path Length (WordNet) - % features in a correct cluster",0.193004629394459,0.161290322580645,0,0.666666666666667
+"Wikipedia Miner metric (db_wikipedia) - #clusters",2.34408602150538,2,0,9
+"Wikipedia Miner metric (db_wikipedia) - average cluster size",2.35812425328554,2.5,0,5.5
+"Wikipedia Miner metric (db_wikipedia) - % correct clusters",0.681018518518518,0.75,0,1
+"Wikipedia Miner metric (db_wikipedia) - % features in a correct cluster",0.237103565443041,0.2,0,0.764705882352941
+"Wikipedia Miner metric (db_wiktionary) - #clusters",2.08602150537634,2,0,8
+"Wikipedia Miner metric (db_wiktionary) - average cluster size",2.03042754736303,2,0,7
+"Wikipedia Miner metric (db_wiktionary) - % correct clusters",0.765904761904762,1,0,1
+"Wikipedia Miner metric (db_wiktionary) - % features in a correct cluster",0.205325875629294,0.181818181818182,0,0.692307692307692
+"Transitive reduction metric - #clusters",2.81720430107527,2,0,10
+"Transitive reduction metric - average cluster size",3.50367383512545,3,0,11
+"Transitive reduction metric - % correct clusters",0.257704654895666,0,0,1
+"Transitive reduction metric - % features in a correct cluster",0.115358880132565,0,0,0.75
+
+Clusters on reduced BIG (random)
+"","mean","median","min","max"
+"run",499.5,499.5,0,999
+"Random - #clusters",3.90782795698925,4,0,19
+"Random - average cluster size",2.03918435577003,2,0,4
+"Random - % correct clusters",0.398981020799743,0.333333333333333,0,1
+"Random - % features in a correct cluster",0.170683106095825,0.153846153846154,0,1
+
+Cliques
+"","mean","median","min","max"
+"#clusters",1.59139784946237,1,0,6
+"average cluster size",5.09408602150538,4,0,16
+"% correct clusters",0.489700374531835,0.5,0,1
+"% features in a correct cluster",0.165618103550164,0.15,0,0.75
+"% connected cliques in hierarchy",0.945692883895131,1,0.166666666666667,1
+"% simple unfolding",0.489700374531835,0.5,0,1
+"% features in simple unfolding",0.165618103550164,0.15,0,0.75
+
+Feature groups
+"","mean","median","min","max"
+"Mutex - #clusters",3.51612903225806,1,0,47
+"Mutex - average cluster size",1.29515040000184,2,0,5
+"Mutex - % correct clusters",0.345244113386648,0.142857142857143,0,1
+"Mutex - % features in a correct cluster",0.0599925976441134,0,0,0.764705882352941
+"Xor - #clusters",7.2258064516129,1,0,473
+"Xor - average cluster size",1.66131412903731,2,0,4.5
+"Xor - % correct clusters",0.890523767305463,1,0.0761099365750529,1
+"Xor - % features in a correct cluster",0.216939507445818,0.166666666666667,0,1.73214285714286
+"Or - #clusters",1.10752688172043,1,0,12
+"Or - average cluster size",1.83333333333333,2,0,6
+"Or - % correct clusters",0.810263653483992,1,0,1
+"Or - % features in a correct cluster",0.134884367797181,0.111111111111111,0,0.785714285714286
+"All - #clusters",11.3978494623656,3,0,520
+"All - average cluster size",2.35980775228386,2.33333333333333,0,6
+"All - % correct clusters",0.68531629541655,0.666666666666667,0,1
+"All - % features in a correct cluster",0.366811538745883,0.346153846153846,0,1.76785714285714
+
+Feature groups on reduced BIG
+"","mean","median","min","max"
+"Mutex - #clusters",0.483870967741935,0,0,7
+"Mutex - average cluster size",0.6226318484383,0,0,3.33333333333333
+"Mutex - % correct clusters",0.656084656084656,1,0,1
+"Mutex - % features in a correct cluster",0.030856749126203,0,0,0.272727272727273
+"Xor - #clusters",2.13978494623656,1,0,63
+"Xor - average cluster size",1.45387438129374,2,0,4
+"Xor - % correct clusters",0.923044217687075,1,0.142857142857143,1
+"Xor - % features in a correct cluster",0.159729398782633,0.142857142857143,0,0.615384615384615
+"Or - #clusters",1.10752688172043,1,0,12
+"Or - average cluster size",1.83333333333333,2,0,6
+"Or - % correct clusters",0.810263653483992,1,0,1
+"Or - % features in a correct cluster",0.134884367797181,0.111111111111111,0,0.785714285714286
+"All - #clusters",3.73118279569892,2,0,65
+"All - average cluster size",2.29485490614523,2.33333333333333,0,6
+"All - % correct clusters",0.824564116439116,1,0,1
+"All - % features in a correct cluster",0.325470515706017,0.333333333333333,0,0.846153846153846
+
