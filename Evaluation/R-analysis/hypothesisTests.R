@@ -180,16 +180,7 @@ testH5and6 <- function(dir) {
   compareBIGAndRBIG(fmOntoCoverage, fmOntoLogicCoverage)
 }
 
-testH7and8 <- function(dir) {
-  # Get data
-  
-  # Cliques
-  ## H7: cliques contain features that are connected by parent-child relationships
-  
-  ## H8: cliques require a simple unfolding to retrieve the hierarchy
-}
-
-testH9 <- function(dir) {
+testH7 <- function(dir) {
   # Get data
   fgroupsBIG <- readCSV(dir, "fgroups.csv")
   fgroupsBIGPrecision <- fgroupsBIG[,grep("% correct clusters",names(fgroupsBIG))]
@@ -200,9 +191,9 @@ testH9 <- function(dir) {
   fgroupsRBIGCoverage <- fgroupsRBIG[,grep("% features in a correct cluster",names(fgroupsBIG))]
     
   # Logical feature groups
-  ## H9: the reduced BIG can improve the quality of logical feature groups
+  ## H7: the reduced BIG can improve the quality of logical feature groups
   cat("**********************************\n")
-  cat("H9: the reduced BIG can improve the quality of logical feature groups\n\n\n")
+  cat("H7: the reduced BIG can improve the quality of logical feature groups\n\n\n")
   compareBIGAndRBIG(fgroupsBIGPrecision, fgroupsRBIGPrecision)
   compareBIGAndRBIG(fgroupsBIGCoverage, fgroupsRBIGCoverage)
 }
@@ -214,9 +205,8 @@ testAllHypotheses <- function(dir, fase=FALSE) {
   sink(output,append=TRUE) # redirect standard output to a file
   testH1toH4(dir, fase)
   testH5and6(dir)
-  testH7and8(dir)
-  testH9(dir)
-  sink(NULL)
+  testH7(dir)
+  sink()
 }
 
 cat("tests for ICSE (SPLOT)\n")

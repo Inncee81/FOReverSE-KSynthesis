@@ -1432,7 +1432,7 @@ sample estimates:
 effect size (Cohen's d) =  0.405966293843073 
 -----------------------------------------
 **********************************
-H9: the reduced BIG can improve the quality of logical feature groups
+H7: the reduced BIG can improve the quality of logical feature groups
 
 
 tested technique =  Mutex - % correct clusters  - RBIG 
