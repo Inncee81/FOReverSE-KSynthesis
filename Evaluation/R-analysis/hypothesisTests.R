@@ -8,6 +8,7 @@ testHypothesis <- function(ourTechnique, ourTechniqueName, theOtherTechnique, th
                     theOtherTechnique, 
                     paired=TRUE, 
                     alternative="greater", 
+                    exact=TRUE,
                     conf.int=TRUE,
                     conf.level=0.99,
                     na.action=na.omit) # NA ???

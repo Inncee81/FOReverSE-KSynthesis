@@ -6,288 +6,288 @@ H1: ontological techniques are superior to random or logical heuristics
 tested technique =  Smith Waterman (Simmetrics) - Full Synthesis 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2918, p-value = 0.002503
+V = 2918, p-value = 0.002344
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.0163135       Inf
+ 0.0164916       Inf
 sample estimates:
 (pseudo)median 
-    0.07838133 
+    0.07841566 
 
 effect size (Cohen's d) =  0.322645044511057 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - Full Synthesis 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2678, p-value = 0.02958
+V = 2678, p-value = 0.02959
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.01118619         Inf
+ -0.01110606         Inf
 sample estimates:
 (pseudo)median 
-    0.05100207 
+    0.05103072 
 
 effect size (Cohen's d) =  0.243448517621945 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - Full Synthesis 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3052, p-value = 0.00045
+V = 3052, p-value = 0.0003842
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.03002201        Inf
+ 0.03020448        Inf
 sample estimates:
 (pseudo)median 
-    0.09687205 
+     0.0968867 
 
 effect size (Cohen's d) =  0.38103382546415 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - Full Synthesis 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3126, p-value = 0.0001569
+V = 3126, p-value = 0.000124
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.03785327        Inf
+ 0.03805303        Inf
 sample estimates:
 (pseudo)median 
-      0.102784 
+     0.1027933 
 
 effect size (Cohen's d) =  0.408064819769198 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - Full Synthesis 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3054, p-value = 0.0004378
+V = 3054, p-value = 0.0003731
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.03027251        Inf
+ 0.03055063        Inf
 sample estimates:
 (pseudo)median 
-    0.09450753 
+    0.09447024 
 
 effect size (Cohen's d) =  0.359889086741916 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - Full Synthesis 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2996, p-value = 0.0009498
+V = 2996, p-value = 0.0008485
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.02102429        Inf
+ 0.02130332        Inf
 sample estimates:
 (pseudo)median 
-    0.07700553 
+    0.07696744 
 
 effect size (Cohen's d) =  0.337167619788359 
 -----------------------------------------
 tested technique =  Smith Waterman (Simmetrics) - Full Synthesis 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2455, p-value = 0.1509
+V = 2455, p-value = 0.1521
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.04506159         Inf
+ -0.04503571         Inf
 sample estimates:
 (pseudo)median 
-    0.03658265 
+    0.03659477 
 
 effect size (Cohen's d) =  0.135588055062237 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - Full Synthesis 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2377, p-value = 0.2316
+V = 2377, p-value = 0.2327
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.05805788         Inf
+ -0.05794565         Inf
 sample estimates:
 (pseudo)median 
-    0.03026769 
+    0.03027875 
 
 effect size (Cohen's d) =  0.118130244752895 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - Full Synthesis 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2545, p-value = 0.05695
+V = 2545, p-value = 0.05732
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.02490084         Inf
+ -0.02488432         Inf
 sample estimates:
 (pseudo)median 
-    0.05489506 
+    0.05487141 
 
 effect size (Cohen's d) =  0.190660655478963 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - Full Synthesis 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2583.5, p-value = 0.04174
+V = 2583.5, p-value = 0.04183
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.01938591         Inf
+ -0.01917778         Inf
 sample estimates:
 (pseudo)median 
-    0.05671861 
+     0.0566572 
 
 effect size (Cohen's d) =  0.204826772918862 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - Full Synthesis 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2489, p-value = 0.08646
+V = 2489, p-value = 0.08718
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.03531958         Inf
+ -0.03517475         Inf
 sample estimates:
 (pseudo)median 
-     0.0488197 
+    0.04884896 
 
 effect size (Cohen's d) =  0.171074085674918 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - Full Synthesis 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2516, p-value = 0.07105
+V = 2516, p-value = 0.0716
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.03322916         Inf
+ -0.03227273         Inf
 sample estimates:
 (pseudo)median 
-    0.04762665 
+    0.04758364 
 
 effect size (Cohen's d) =  0.168942649189975 
 -----------------------------------------
 tested technique =  Smith Waterman (Simmetrics) - Full Synthesis 
 reference technique =  FMFASE_SAT 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2058.5, p-value = 0.01772
+V = 2058.5, p-value = 0.01752
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.003929432          Inf
+ -0.003921569          Inf
 sample estimates:
 (pseudo)median 
-    0.05560466 
+    0.05555556 
 
 effect size (Cohen's d) =  0.248305930708145 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - Full Synthesis 
 reference technique =  FMFASE_SAT 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1701.5, p-value = 0.04535
+V = 1701.5, p-value = 0.04553
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.01601147         Inf
+ -0.015    Inf
 sample estimates:
 (pseudo)median 
-    0.05007667 
+    0.05011962 
 
 effect size (Cohen's d) =  0.198769646626845 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - Full Synthesis 
 reference technique =  FMFASE_SAT 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1943.5, p-value = 0.00137
+V = 1943.5, p-value = 0.001211
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.01542614        Inf
+ 0.01555556        Inf
 sample estimates:
 (pseudo)median 
-    0.07054107 
+    0.07055053 
 
 effect size (Cohen's d) =  0.343343341620609 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - Full Synthesis 
 reference technique =  FMFASE_SAT 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2263, p-value = 0.001021
+V = 2263, p-value = 0.0008948
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.01661108        Inf
+ 0.01666667        Inf
 sample estimates:
 (pseudo)median 
-    0.07502971 
+     0.0750387 
 
 effect size (Cohen's d) =  0.357411676737098 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - Full Synthesis 
 reference technique =  FMFASE_SAT 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1720.5, p-value = 0.005613
+V = 1720.5, p-value = 0.005334
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.007089399         Inf
+ 0.007142857         Inf
 sample estimates:
 (pseudo)median 
-    0.07139609 
+    0.07127147 
 
 effect size (Cohen's d) =  0.294040703462222 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - Full Synthesis 
 reference technique =  FMFASE_SAT 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1779.5, p-value = 0.002029
+V = 1779.5, p-value = 0.00183
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.0127447       Inf
+ 0.01363636        Inf
 sample estimates:
 (pseudo)median 
-    0.07054344 
+    0.07055053 
 
 effect size (Cohen's d) =  0.313034456957822 
 -----------------------------------------
@@ -298,112 +298,112 @@ H2: the reduced BIG can improve the effectiveness
 tested technique =  Smith Waterman (Simmetrics) - Full Synthesis  - RBIG 
 reference technique =  Smith Waterman (Simmetrics) - Full Synthesis  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2103.5, p-value = 0.001118
+V = 2103.5, p-value = 0.0009811
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.01418312        Inf
+ 0.01428571        Inf
 sample estimates:
 (pseudo)median 
-    0.06670046 
+    0.06666667 
 
 effect size (Cohen's d) =  0.330950725055506 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - Full Synthesis  - RBIG 
 reference technique =  Levenshtein (Simmetrics) - Full Synthesis  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1894, p-value = 6.861e-05
+V = 1894, p-value = 4.464e-05
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.03068072        Inf
+ 0.03064516        Inf
 sample estimates:
 (pseudo)median 
-    0.08369405 
+    0.08352187 
 
 effect size (Cohen's d) =  0.429030228105022 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - Full Synthesis  - RBIG 
 reference technique =  Wu & Palmer (WordNet) - Full Synthesis  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1676.5, p-value = 0.0112
+V = 1676.5, p-value = 0.01092
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -3.884022e-05           Inf
+ -2.775558e-17           Inf
 sample estimates:
 (pseudo)median 
-    0.06421538 
+    0.06428571 
 
 effect size (Cohen's d) =  0.284929524461081 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - Full Synthesis  - RBIG 
 reference technique =  Path Length (WordNet) - Full Synthesis  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1945.5, p-value = 0.00299
+V = 1945.5, p-value = 0.002769
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.008330342         Inf
+ 0.008333333         Inf
 sample estimates:
 (pseudo)median 
-    0.06359036 
+    0.06356421 
 
 effect size (Cohen's d) =  0.307439823393989 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - Full Synthesis  - RBIG 
 reference technique =  Wikipedia Miner metric (db_wikipedia) - Full Synthesis  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1834, p-value = 0.003928
+V = 1834, p-value = 0.00368
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.008305068         Inf
+ 0.008333333         Inf
 sample estimates:
 (pseudo)median 
-    0.06150806 
+    0.06149733 
 
 effect size (Cohen's d) =  0.30759019276696 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - Full Synthesis  - RBIG 
 reference technique =  Wikipedia Miner metric (db_wiktionary) - Full Synthesis  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2183, p-value = 0.0002696
+V = 2183, p-value = 0.0002116
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.01949326        Inf
+ 0.01981982        Inf
 sample estimates:
 (pseudo)median 
-    0.07691343 
+    0.07692308 
 
 effect size (Cohen's d) =  0.400289246565681 
 -----------------------------------------
 tested technique =  Random - Full Synthesis  - RBIG 
 reference technique =  Random - Full Synthesis  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3589, p-value = 3.773e-08
+V = 3589, p-value = 7.977e-09
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.05004832        Inf
+ 0.0501    Inf
 sample estimates:
 (pseudo)median 
-    0.08618731 
+    0.08618193 
 
 effect size (Cohen's d) =  0.694997983317508 
 -----------------------------------------
@@ -414,192 +414,192 @@ H3: ontological techniques are superior to random heuristics
 tested technique =  Smith Waterman (Simmetrics) - TOP 2 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2724, p-value = 0.01954
+V = 2724, p-value = 0.01939
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.01324317         Inf
+ -0.01320346         Inf
 sample estimates:
 (pseudo)median 
-    0.08647718 
+    0.08647262 
 
 effect size (Cohen's d) =  0.221442808876739 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - TOP 2 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2537, p-value = 0.08902
+V = 2537, p-value = 0.0896
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.03691209         Inf
+ -0.03670746         Inf
 sample estimates:
 (pseudo)median 
-    0.05269857 
+    0.05258589 
 
 effect size (Cohen's d) =  0.14646671020993 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - TOP 2 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2718, p-value = 0.02066
+V = 2718, p-value = 0.02056
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.01204462         Inf
+ -0.01190761         Inf
 sample estimates:
 (pseudo)median 
-    0.08175953 
+    0.08178964 
 
 effect size (Cohen's d) =  0.200485545247314 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - TOP 2 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2851, p-value = 0.005387
+V = 2851, p-value = 0.00519
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.009422695         Inf
+ 0.00971946        Inf
 sample estimates:
 (pseudo)median 
-    0.09631471 
+    0.09637803 
 
 effect size (Cohen's d) =  0.255116423821491 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - TOP 2 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2813, p-value = 0.008101
+V = 2813, p-value = 0.0079
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.004222533         Inf
+ 0.004647859         Inf
 sample estimates:
 (pseudo)median 
-     0.0940687 
+    0.09407743 
 
 effect size (Cohen's d) =  0.232157352253023 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - TOP 2 
 reference technique =  FMRAND_BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2697, p-value = 0.02501
+V = 2697, p-value = 0.02496
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.01619304         Inf
+ -0.01579312         Inf
 sample estimates:
 (pseudo)median 
-    0.07677798 
+    0.07684343 
 
 effect size (Cohen's d) =  0.201018479914551 
 -----------------------------------------
 tested technique =  Smith Waterman (Simmetrics) - TOP 2 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2452.5, p-value = 0.1531
+V = 2452.5, p-value = 0.1541
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.05903903         Inf
+ -0.05903361         Inf
 sample estimates:
 (pseudo)median 
-    0.04103024 
+    0.04077125 
 
 effect size (Cohen's d) =  0.108488596609772 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - TOP 2 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2385, p-value = 0.1691
+V = 2385, p-value = 0.1701
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.05950951         Inf
+ -0.05928183         Inf
 sample estimates:
 (pseudo)median 
-    0.03924373 
+    0.03927326 
 
 effect size (Cohen's d) =  0.102080913955562 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - TOP 2 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2435.5, p-value = 0.1691
+V = 2435.5, p-value = 0.1701
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.05307429         Inf
+ -0.0530303        Inf
 sample estimates:
 (pseudo)median 
-    0.03853364 
+    0.03843097 
 
 effect size (Cohen's d) =  0.107308943025867 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - TOP 2 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2462.5, p-value = 0.1443
+V = 2462.5, p-value = 0.1452
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.05293951         Inf
+ -0.05277015         Inf
 sample estimates:
 (pseudo)median 
-    0.04289849 
+    0.04286359 
 
 effect size (Cohen's d) =  0.115578858264459 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - TOP 2 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2434, p-value = 0.1253
+V = 2434, p-value = 0.1262
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.05323876         Inf
+ -0.05258838         Inf
 sample estimates:
 (pseudo)median 
-    0.05102747 
+    0.05100227 
 
 effect size (Cohen's d) =  0.126892311864416 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - TOP 2 
 reference technique =  FMRAND_RBIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2340, p-value = 0.1641
+V = 2340, p-value = 0.1652
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.06335377         Inf
+ -0.06334175         Inf
 sample estimates:
 (pseudo)median 
-    0.04360816 
+    0.04362498 
 
 effect size (Cohen's d) =  0.111894742314226 
 -----------------------------------------
@@ -610,112 +610,112 @@ H4: the reduced BIG can improve the quality of ranking lists
 tested technique =  Smith Waterman (Simmetrics) - TOP 2  - RBIG 
 reference technique =  Smith Waterman (Simmetrics) - TOP 2  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1037, p-value = 0.9798
+V = 1037, p-value = 0.9801
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.1052581        Inf
+ -0.1045455        Inf
 sample estimates:
 (pseudo)median 
-   -0.04511816 
+   -0.04506944 
 
 effect size (Cohen's d) =  0.216911519219793 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - TOP 2  - RBIG 
 reference technique =  Levenshtein (Simmetrics) - TOP 2  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1174, p-value = 0.784
+V = 1174, p-value = 0.7832
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.07936458         Inf
+ -0.07875116         Inf
 sample estimates:
 (pseudo)median 
-   -0.01601203 
+   -0.01600985 
 
 effect size (Cohen's d) =  0.0479511570637125 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - TOP 2  - RBIG 
 reference technique =  Wu & Palmer (WordNet) - TOP 2  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1348.5, p-value = 0.9634
+V = 1348.5, p-value = 0.9635
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.08713576         Inf
+ -0.08712121         Inf
 sample estimates:
 (pseudo)median 
-   -0.03557134 
+   -0.03553391 
 
 effect size (Cohen's d) =  0.155995745525192 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - TOP 2  - RBIG 
 reference technique =  Path Length (WordNet) - TOP 2  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1039.5, p-value = 0.9937
+V = 1039.5, p-value = 0.994
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.1111089        Inf
+ -0.1111111        Inf
 sample estimates:
 (pseudo)median 
-   -0.05694055 
+   -0.05698529 
 
 effect size (Cohen's d) =  0.244321525338246 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - TOP 2  - RBIG 
 reference technique =  Wikipedia Miner metric (db_wikipedia) - TOP 2  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1055.5, p-value = 0.9745
+V = 1055.5, p-value = 0.9748
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.1041816        Inf
+ -0.1041667        Inf
 sample estimates:
 (pseudo)median 
-   -0.04635694 
+   -0.04613095 
 
 effect size (Cohen's d) =  0.183048455073679 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - TOP 2  - RBIG 
 reference technique =  Wikipedia Miner metric (db_wiktionary) - TOP 2  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1249, p-value = 0.9001
+V = 1249, p-value = 0.8997
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.08174035         Inf
+ -0.08169935         Inf
 sample estimates:
 (pseudo)median 
-   -0.03182064 
+   -0.03227814 
 
 effect size (Cohen's d) =  0.143664281095541 
 -----------------------------------------
 tested technique =  Random - TOP 2  - RBIG 
 reference technique =  Random - TOP 2  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2082, p-value = 0.5174
+V = 2082, p-value = 0.5177
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.03446791         Inf
+ -0.03439153         Inf
 sample estimates:
 (pseudo)median 
- -0.0008229903 
+ -0.0008569337 
 
 effect size (Cohen's d) =  0.038783450872247 
 -----------------------------------------
@@ -726,384 +726,384 @@ H5: ontological techniques are superior to random heuristics
 tested technique =  Smith Waterman (Simmetrics) - % correct clusters 
 reference technique =  FMRAND_BIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3626, p-value = 3.515e-09
+V = 3626, p-value = 3.723e-10
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.1422642       Inf
+ 0.1426214       Inf
 sample estimates:
 (pseudo)median 
-     0.2275543 
+     0.2275149 
 
 effect size (Cohen's d) =  0.738532544773651 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - % correct clusters 
 reference technique =  FMRAND_BIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3682, p-value = 4.905e-09
+V = 3682, p-value = 5.948e-10
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.1603792       Inf
+ 0.160847      Inf
 sample estimates:
 (pseudo)median 
-     0.2526719 
+     0.2525987 
 
 effect size (Cohen's d) =  0.728580695681382 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - % correct clusters 
 reference technique =  FMRAND_BIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3216, p-value = 3.442e-09
+V = 3216, p-value = 2.913e-10
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.2138354       Inf
+ 0.2145411       Inf
 sample estimates:
 (pseudo)median 
-      0.312821 
+     0.3127962 
 
 effect size (Cohen's d) =  0.80761344572113 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - % correct clusters 
 reference technique =  FMRAND_BIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2654, p-value = 4.297e-11
+V = 2654, p-value = 1.552e-13
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.3314965       Inf
+ 0.3316869       Inf
 sample estimates:
 (pseudo)median 
-     0.4761575 
+     0.4765254 
 
 effect size (Cohen's d) =  1.13653916086349 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - % correct clusters 
 reference technique =  FMRAND_BIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3649, p-value = 2.054e-09
+V = 3649, p-value = 1.815e-10
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.1917726       Inf
+ 0.191885      Inf
 sample estimates:
 (pseudo)median 
-     0.2799409 
+     0.2797813 
 
 effect size (Cohen's d) =  0.776495919592428 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - % correct clusters 
 reference technique =  FMRAND_BIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3046, p-value = 3.438e-11
+V = 3046, p-value = 2.216e-13
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.2745941       Inf
+ 0.2749462       Inf
 sample estimates:
 (pseudo)median 
-     0.3782387 
+       0.37822 
 
 effect size (Cohen's d) =  1.05375095051248 
 -----------------------------------------
 tested technique =  Smith Waterman (Simmetrics) - % features in a correct cluster 
 reference technique =  FMRAND_BIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3187, p-value = 6.219e-05
+V = 3187, p-value = 4.525e-05
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.03240869        Inf
+ 0.03263063        Inf
 sample estimates:
 (pseudo)median 
-    0.08214323 
+    0.08211066 
 
 effect size (Cohen's d) =  0.471013187189662 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - % features in a correct cluster 
 reference technique =  FMRAND_BIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3299, p-value = 9.929e-06
+V = 3299, p-value = 5.885e-06
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.05292583        Inf
+ 0.05323015        Inf
 sample estimates:
 (pseudo)median 
-     0.1144985 
+     0.1145303 
 
 effect size (Cohen's d) =  0.521288686632698 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - % features in a correct cluster 
 reference technique =  FMRAND_BIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2114, p-value = 0.6079
+V = 2114, p-value = 0.6082
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.04432599         Inf
+ -0.04426956         Inf
 sample estimates:
 (pseudo)median 
-  -0.004481377 
+  -0.004443627 
 
 effect size (Cohen's d) =  0.0325196073349728 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - % features in a correct cluster 
 reference technique =  FMRAND_BIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2469, p-value = 0.1387
+V = 2469, p-value = 0.1398
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.03021343         Inf
+ -0.03017348         Inf
 sample estimates:
 (pseudo)median 
-    0.02596663 
+    0.02593742 
 
 effect size (Cohen's d) =  0.166930657780436 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - % features in a correct cluster 
 reference technique =  FMRAND_BIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2964, p-value = 0.001428
+V = 2964, p-value = 0.001303
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.01801356        Inf
+ 0.01818569        Inf
 sample estimates:
 (pseudo)median 
-    0.07554173 
+    0.07552778 
 
 effect size (Cohen's d) =  0.385895693206003 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - % features in a correct cluster 
 reference technique =  FMRAND_BIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2710, p-value = 0.02223
+V = 2710, p-value = 0.02215
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.007090544          Inf
+ -0.006834649          Inf
 sample estimates:
 (pseudo)median 
-    0.04056438 
+    0.04058716 
 
 effect size (Cohen's d) =  0.260478333796673 
 -----------------------------------------
 tested technique =  Smith Waterman (Simmetrics) - % correct clusters 
 reference technique =  FMRAND_RBIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3039, p-value = 5.526e-08
+V = 3039, p-value = 1.078e-08
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.1821326       Inf
+ 0.1824492       Inf
 sample estimates:
 (pseudo)median 
-     0.2928321 
+     0.2928669 
 
 effect size (Cohen's d) =  0.703525359863047 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - % correct clusters 
 reference technique =  FMRAND_RBIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3256, p-value = 1.461e-07
+V = 3256, p-value = 3.954e-08
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.1708859       Inf
+ 0.1709469       Inf
 sample estimates:
 (pseudo)median 
-     0.2872891 
+     0.2872908 
 
 effect size (Cohen's d) =  0.645369791013975 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - % correct clusters 
 reference technique =  FMRAND_RBIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2493, p-value = 1.047e-06
+V = 2493, p-value = 3.621e-07
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.1610268       Inf
+ 0.1614811       Inf
 sample estimates:
 (pseudo)median 
-     0.2825924 
+     0.2825955 
 
 effect size (Cohen's d) =  0.603934816478824 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - % correct clusters 
 reference technique =  FMRAND_RBIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2236, p-value = 2.019e-08
+V = 2236, p-value = 1.712e-09
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.2788925       Inf
+ 0.2803335       Inf
 sample estimates:
 (pseudo)median 
-     0.4245995 
+     0.4245755 
 
 effect size (Cohen's d) =  0.868090463903215 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - % correct clusters 
 reference technique =  FMRAND_RBIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2795, p-value = 2.15e-07
+V = 2795, p-value = 5.562e-08
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.174339      Inf
+ 0.1746255       Inf
 sample estimates:
 (pseudo)median 
-     0.2979641 
+     0.2979066 
 
 effect size (Cohen's d) =  0.636326015557097 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - % correct clusters 
 reference technique =  FMRAND_RBIG - precision 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2520, p-value = 3.686e-09
+V = 2520, p-value = 1.876e-10
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.2702691       Inf
+ 0.2706774       Inf
 sample estimates:
 (pseudo)median 
-     0.3930237 
+     0.3931133 
 
 effect size (Cohen's d) =  0.886367301733585 
 -----------------------------------------
 tested technique =  Smith Waterman (Simmetrics) - % features in a correct cluster 
 reference technique =  FMRAND_RBIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3022, p-value = 0.000675
+V = 3022, p-value = 0.0005913
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.01691323        Inf
+ 0.01698834        Inf
 sample estimates:
 (pseudo)median 
-    0.06713627 
+    0.06716556 
 
 effect size (Cohen's d) =  0.39137918715775 
 -----------------------------------------
 tested technique =  Levenshtein (Simmetrics) - % features in a correct cluster 
 reference technique =  FMRAND_RBIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 3196, p-value = 5.401e-05
+V = 3196, p-value = 3.876e-05
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.04439917        Inf
+ 0.04455952        Inf
 sample estimates:
 (pseudo)median 
-     0.1012372 
+     0.1012402 
 
 effect size (Cohen's d) =  0.48949474375279 
 -----------------------------------------
 tested technique =  Wu & Palmer (WordNet) - % features in a correct cluster 
 reference technique =  FMRAND_RBIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2020, p-value = 0.737
+V = 2020, p-value = 0.7368
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.04686821         Inf
+ -0.04683153         Inf
 sample estimates:
 (pseudo)median 
-  -0.009340261 
+  -0.009329628 
 
 effect size (Cohen's d) =  0.00647812947468926 
 -----------------------------------------
 tested technique =  Path Length (WordNet) - % features in a correct cluster 
 reference technique =  FMRAND_RBIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2319, p-value = 0.3045
+V = 2319, p-value = 0.306
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.04064766         Inf
+ -0.04060813         Inf
 sample estimates:
 (pseudo)median 
-    0.01296692 
+    0.01297669 
 
 effect size (Cohen's d) =  0.105902776006185 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wikipedia) - % features in a correct cluster 
 reference technique =  FMRAND_RBIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2825, p-value = 0.007137
+V = 2825, p-value = 0.006935
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.002430433         Inf
+ 0.002448485         Inf
 sample estimates:
 (pseudo)median 
-    0.05738995 
+    0.05740621 
 
 effect size (Cohen's d) =  0.319689279262499 
 -----------------------------------------
 tested technique =  Wikipedia Miner metric (db_wiktionary) - % features in a correct cluster 
 reference technique =  FMRAND_RBIG - coverage 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 2509, p-value = 0.1076
+V = 2509, p-value = 0.1085
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.0260994        Inf
+ -0.02587179         Inf
 sample estimates:
 (pseudo)median 
-    0.02632155 
+    0.02628699 
 
 effect size (Cohen's d) =  0.181229615633316 
 -----------------------------------------
@@ -1114,48 +1114,48 @@ H6: the reduced BIG can improve the quality of the clusters
 tested technique =  Random - % correct clusters  - RBIG 
 reference technique =  Random - % correct clusters  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 4206, p-value = 4.885e-15
+V = 4206, p-value < 2.2e-16
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.08024802        Inf
+ 0.08037679        Inf
 sample estimates:
 (pseudo)median 
-     0.1112733 
+     0.1112804 
 
 effect size (Cohen's d) =  0.84409955191477 
 -----------------------------------------
 tested technique =  Random - % features in a correct cluster  - RBIG 
 reference technique =  Random - % features in a correct cluster  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
 V = 590, p-value = 1
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- -0.01377809         Inf
+ -0.01375806         Inf
 sample estimates:
 (pseudo)median 
-  -0.009097551 
+  -0.009108974 
 
 effect size (Cohen's d) =  0.656123149799288 
 -----------------------------------------
 tested technique =  Smith Waterman (Simmetrics) - % correct clusters  - RBIG 
 reference technique =  Smith Waterman (Simmetrics) - % correct clusters  - BIG 
 
-	Asymptotic Wilcoxon signed rank test
+	Exact Wilcoxon signed rank test
 
 data:  ourTechnique and theOtherTechnique
-V = 1183, p-value = 6.603e-08
+V = 1183, p-value = 2.115e-09
 alternative hypothesis: true mu is greater than 0
 99 percent confidence interval:
- 0.1749649       Inf
+ 0.1738095       Inf
 sample estimates:
 (pseudo)median 
-     0.2749101 
+     0.2744048 
 
 effect size (Cohen's d) =  0.650357114057398 
 -----------------------------------------
