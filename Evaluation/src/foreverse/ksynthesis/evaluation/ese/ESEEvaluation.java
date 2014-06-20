@@ -1,6 +1,7 @@
 package foreverse.ksynthesis.evaluation.ese;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +30,8 @@ import foreverse.ksynthesis.metrics.ImplicationGraphMetrics;
 import foreverse.ksynthesis.metrics.RandomMetric;
 import foreverse.ksynthesis.metrics.TransitiveReductionMetric;
 import fr.familiar.experimental.FGroup;
+import fr.familiar.interpreter.FMLShell;
+import fr.familiar.parser.FMLCommandInterpreter;
 import fr.familiar.test.FMLTest;
 import fr.familiar.variable.FeatureModelVariable;
 import gsd.graph.ImplicationGraph;
@@ -97,7 +100,6 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
-	@Ignore
 	@Test
 	public void testPCMforESE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -111,6 +113,7 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
+	@Ignore
 	@Test
 	public void testFASEonSPLOT() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -156,6 +159,58 @@ public class ESEEvaluation extends FMLTest {
 		// Close CSV writer
 		writer.close();
 	}
+	
+	
+	public FeatureModelVariable getRunningExample() {
+		
+		if (_shell == null) {
+			_shell = FMLShell.instantiateStandalone(null);
+			_environment = _shell.getCurrentEnv();
+			_builder = FMLCommandInterpreter.getBuilder();
+		}
+		
+		FeatureModelVariable runningExample = null;
+		
+		try {
+			
+			 runningExample = FM ("fm_wiki", 
+					" Wiki: Hosting Licence Storage [\"Programming Language\"] ; \n" + 
+					"Hosting: (\"Hosted Service\"|Local) ; \n" + 
+					"Licence: (\"Proprietary Licence\"|\"Open Source\") ; \n" + 
+					"Storage: (PostgreSQL|MySQL) ; \n" + 
+					"\"Programming Language\": (Java|PHP) ; \n" + 
+					"\"Hosted Service\": [Domain] ; \n" + 
+					"(\"Proprietary Licence\" -> !\"Programming Language\");\n" + 
+					"(Local -> !\"Proprietary Licence\");\n" + 
+					"(PostgreSQL <-> \"Proprietary Licence\");" +
+					"PostgreSQL -> Domain ;"
+					);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return runningExample;
+	}
+	
+	@Test
+	public void reducedBIGOfRunningExample() throws IOException {
+		FeatureModelVariable runningExample = getRunningExample();
+		
+		InteractiveFMSynthesizer synthesizer = new InteractiveFMSynthesizer(runningExample);
+		ImplicationGraph<String> big = synthesizer.getImplicationGraph();
+		
+		new File("output").mkdirs(); // Create output directory
+		FileWriter writerBIG = new FileWriter(new File("output/runningExampleBIG.dot"));
+		writerBIG.write(big.toString());
+		writerBIG.close();
+		
+		synthesizer.reduceBIG();
+		ImplicationGraph<String> rbig = synthesizer.getImplicationGraph();
+		
+		FileWriter writerRBIG = new FileWriter(new File("output/runningExampleRBIG.dot"));
+		writerRBIG.append(rbig.toString());
+		writerRBIG.close();
+	}
 
 	/**
 	 * Evaluate each heuristics on each FM
@@ -170,71 +225,71 @@ public class ESEEvaluation extends FMLTest {
 	public void evaluation(List<Heuristic> heuristics, HashMap<Heuristic, Double> thresholds, List<FeatureModelVariable> fms, File outputFolder, boolean computeOrGroups) throws IOException {
 		
 		
-//		// Stats
-//		System.out.println("Computing stats");
-//		outputFolder.mkdirs();
-//		
-//		CsvWriter writerStats = new CsvWriter(outputFolder.getAbsolutePath() + "/stats.csv");
-//		testFeatureModelStats(writerStats, fms);
-//		writerStats.close();
-//
-//		// Full synthesis and TOP N
-//		boolean random = false;
-//		System.out.println("Computing top N and full synthesis");
-//		CsvWriter writerSynthesis = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesis.csv");
-//		testSynthesis(writerSynthesis, heuristics, fms, false, random, computeOrGroups);
-//		writerSynthesis.close();
-//
-//		System.out.println("Computing top N and full synthesis on RBIG");
-//		CsvWriter writerSynthesisRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesisRBIG.csv");
-//		testSynthesis(writerSynthesisRBIG, heuristics, fms, true, random, computeOrGroups);
-//		writerSynthesisRBIG.close();
-//
-//		// Clustering
-//		System.out.println("Computing clusters");
-//		CsvWriter writerClustering = new CsvWriter(outputFolder.getAbsolutePath() + "/clustering.csv");
-//		testClustering(writerClustering, heuristics, fms, thresholds, false, random);
-//		writerClustering.close();
-//
-//		System.out.println("Computing clusters on RBIG");
-//		CsvWriter writerClusteringRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/clusteringRBIG.csv");
-//		testClustering(writerClusteringRBIG, heuristics, fms, thresholds, true, random);
-//		writerClusteringRBIG.close();
-//		
-//		
-//		// RANDOM
-//		random = true;
-//		List<Heuristic> randomHeuristic = new ArrayList<Heuristic>();
-//		randomHeuristic.add(new RandomMetric());
-//		// Full synthesis and TOP N
-//		System.out.println("Computing top N and full synthesis (random)");
-//		CsvWriter writerSynthesisRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesis.csv");
-//		testSynthesis(writerSynthesisRandom, randomHeuristic, fms, false, random, computeOrGroups);
-//		writerSynthesisRandom.close();
-//
-//		System.out.println("Computing top N and full synthesis on RBIG (random)");
-//		CsvWriter writerSynthesisRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesisRBIG.csv");
-//		testSynthesis(writerSynthesisRBIGRandom, randomHeuristic, fms, true, random, computeOrGroups);
-//		writerSynthesisRBIGRandom.close();
-//
-//		// Clustering
-//		System.out.println("Computing clusters (random)");
-//		CsvWriter writerClusteringRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clustering.csv");
-//		testClustering(writerClusteringRandom, randomHeuristic, fms, thresholds, false, random);
-//		writerClusteringRandom.close();
-//
-//		System.out.println("Computing clusters on RBIG (random)");
-//		CsvWriter writerClusteringRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clusteringRBIG.csv");
-//		testClustering(writerClusteringRBIGRandom, randomHeuristic, fms, thresholds, true, random);
-//		writerClusteringRBIGRandom.close();
-//		
-//		
-//		
-//		// Cliques
-//		System.out.println("Cliques as clusters");
-//		CsvWriter writerCliques = new CsvWriter(outputFolder.getAbsolutePath() + "/cliques.csv");
-//		testCliques(writerCliques, fms);
-//		writerCliques.close();
+		// Stats
+		System.out.println("Computing stats");
+		outputFolder.mkdirs();
+		
+		CsvWriter writerStats = new CsvWriter(outputFolder.getAbsolutePath() + "/stats.csv");
+		testFeatureModelStats(writerStats, fms);
+		writerStats.close();
+
+		// Full synthesis and TOP N
+		boolean random = false;
+		System.out.println("Computing top N and full synthesis");
+		CsvWriter writerSynthesis = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesis.csv");
+		testSynthesis(writerSynthesis, heuristics, fms, false, random, computeOrGroups);
+		writerSynthesis.close();
+
+		System.out.println("Computing top N and full synthesis on RBIG");
+		CsvWriter writerSynthesisRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/fullsynthesisRBIG.csv");
+		testSynthesis(writerSynthesisRBIG, heuristics, fms, true, random, computeOrGroups);
+		writerSynthesisRBIG.close();
+
+		// Clustering
+		System.out.println("Computing clusters");
+		CsvWriter writerClustering = new CsvWriter(outputFolder.getAbsolutePath() + "/clustering.csv");
+		testClustering(writerClustering, heuristics, fms, thresholds, false, random);
+		writerClustering.close();
+
+		System.out.println("Computing clusters on RBIG");
+		CsvWriter writerClusteringRBIG = new CsvWriter(outputFolder.getAbsolutePath() + "/clusteringRBIG.csv");
+		testClustering(writerClusteringRBIG, heuristics, fms, thresholds, true, random);
+		writerClusteringRBIG.close();
+		
+		
+		// RANDOM
+		random = true;
+		List<Heuristic> randomHeuristic = new ArrayList<Heuristic>();
+		randomHeuristic.add(new RandomMetric());
+		// Full synthesis and TOP N
+		System.out.println("Computing top N and full synthesis (random)");
+		CsvWriter writerSynthesisRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesis.csv");
+		testSynthesis(writerSynthesisRandom, randomHeuristic, fms, false, random, computeOrGroups);
+		writerSynthesisRandom.close();
+
+		System.out.println("Computing top N and full synthesis on RBIG (random)");
+		CsvWriter writerSynthesisRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_fullsynthesisRBIG.csv");
+		testSynthesis(writerSynthesisRBIGRandom, randomHeuristic, fms, true, random, computeOrGroups);
+		writerSynthesisRBIGRandom.close();
+
+		// Clustering
+		System.out.println("Computing clusters (random)");
+		CsvWriter writerClusteringRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clustering.csv");
+		testClustering(writerClusteringRandom, randomHeuristic, fms, thresholds, false, random);
+		writerClusteringRandom.close();
+
+		System.out.println("Computing clusters on RBIG (random)");
+		CsvWriter writerClusteringRBIGRandom = new CsvWriter(outputFolder.getAbsolutePath() + "/random_clusteringRBIG.csv");
+		testClustering(writerClusteringRBIGRandom, randomHeuristic, fms, thresholds, true, random);
+		writerClusteringRBIGRandom.close();
+		
+		
+		
+		// Cliques
+		System.out.println("Cliques as clusters");
+		CsvWriter writerCliques = new CsvWriter(outputFolder.getAbsolutePath() + "/cliques.csv");
+		testCliques(writerCliques, fms);
+		writerCliques.close();
 		
 		// Feature groups
 		System.out.println("Feature groups as clusters");
