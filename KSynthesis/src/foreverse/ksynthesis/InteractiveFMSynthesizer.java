@@ -986,6 +986,18 @@ public class InteractiveFMSynthesizer extends Observable{
 		for (String feature : implicationGraph.vertices()) {
 			reducedBIG.addVertex(feature);
 		}
+
+		// Expand cliques
+		for (Set<String> clique : reducedGraph.vertices()) {
+			for (String source : clique) {
+				for (String target : clique) {
+					if (!source.equals(target)) {
+						SimpleEdge newEdge = reducedBIG.addEdge(source, target);
+						reducedBIG.setEdgeWeight(newEdge, implicationGraph.getEdgeWeight(implicationGraph.findEdge(source, target)));
+					}
+				}
+			}
+		}
 		
 		// Create edges
 		for (SimpleEdge edge : reducedGraph.edges()) {
