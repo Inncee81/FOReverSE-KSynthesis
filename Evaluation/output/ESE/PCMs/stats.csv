@@ -1,6 +1,6 @@
 ID,#features,depth of hierarchy,#edges in BIG,#edges in reduced BIG,parent candidates (min),parent candidates (max),parent candidates (average),% parents kept after reducing BIG
 Comparison_of_desktop_publishing_software.fmlbdd,24,4,115,95,4,5,4.791666666666667,0.7916666666666666
-Comparison_of_Internet_forum_software.fmlbdd,23,4,154,112,6,7,6.695652173913044,0.6956521739130435
+Comparison_of_Internet_forum_software.fmlbdd,23,4,506,0,22,22,22.0,0.0
 Comparison_of_photo_gallery_software.fmlbdd,57,4,258,110,3,5,4.526315789473684,0.9298245614035088
 Comparison_of_image_viewers.fmlbdd,96,4,536,211,4,6,5.583333333333333,0.9479166666666666
 Comparison_of_Internet_Relay_Chat_clients.fmlbdd,161,4,857,371,3,7,5.3229813664596275,0.968944099378882

@@ -1,23 +1,39 @@
 source("utils.R")
 require("exactRankTests")
 require("lsr")
+library("coin")
 
 # Test if our technique is better than the other technique
 testHypothesis <- function(ourTechnique, ourTechniqueName, theOtherTechnique, theOtherTechniqueName) {
-  testResults = wilcox.exact(ourTechnique, 
-                    theOtherTechnique, 
-                    paired=TRUE, 
-                    alternative="greater", 
-                    exact=TRUE,
-                    conf.int=TRUE,
-                    conf.level=0.99,
-                    na.action=na.omit) # NA ???
-  d = cohensD(ourTechnique, theOtherTechnique, method="paired")
   
+  #testResults <- wilcox.exact(ourTechnique, 
+  #                  theOtherTechnique, 
+  #                  paired=TRUE, 
+  #                  #alternative="greater", 
+  #                  alternative="two.sided", 
+  #                  exact=TRUE,
+  #                  conf.int=TRUE,
+  #                  conf.level=0.99,
+  #                  na.action=na.omit) # NA ???
+  
+  values <- c(ourTechnique, theOtherTechnique)
+  groups <- factor(c(rep(ourTechniqueName, length(ourTechnique)), 
+                     rep(theOtherTechniqueName, length(theOtherTechnique))))
+
+  testResults <- wilcox_test(values ~ groups, 
+                            distribution = "exact", 
+                            conf.int = TRUE)
+  #d <- cohensD(ourTechnique, theOtherTechnique, method="paired")
+  meanDiff <- mean(ourTechnique) - mean(theOtherTechnique)
+    
   cat(paste("tested technique = ", ourTechniqueName, "\n"))
   cat(paste("reference technique = ", theOtherTechniqueName, "\n"))
-  print(testResults)
-  cat(paste("effect size (Cohen's d) = ", d, "\n"))
+  #cat(paste("p-value = ", testResults$p.value, "\n"))
+  cat(paste("p-value = ", pvalue(testResults), "\n"))
+  cat(paste("H0 rejected? = ", pvalue(testResults) < 0.05, "\n"))
+  #print(testResults$p.value)
+  #cat(paste("effect size (Cohen's d) = ", d, "\n"))
+  cat(paste("mean diff = ", meanDiff, "\n"))
   cat("-----------------------------------------\n")
 }
 

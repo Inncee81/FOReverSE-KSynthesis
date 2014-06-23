@@ -1,6 +1,6 @@
 ID,#clusters,average cluster size,% correct clusters,% features in a correct cluster,% connected cliques in hierarchy,% simple unfolding,% features in simple unfolding
 Comparison_of_desktop_publishing_software.fmlbdd,1,5.0,0.0,0.0,1.0,0.0,0.0
-Comparison_of_Internet_forum_software.fmlbdd,1,7.0,0.0,0.0,1.0,0.0,0.0
+Comparison_of_Internet_forum_software.fmlbdd,1,23.0,0.0,0.0,1.0,0.0,0.0
 Comparison_of_photo_gallery_software.fmlbdd,1,4.0,0.0,0.0,1.0,0.0,0.0
 Comparison_of_image_viewers.fmlbdd,1,5.0,1.0,0.052083333333333336,1.0,1.0,0.052083333333333336
 Comparison_of_Internet_Relay_Chat_clients.fmlbdd,2,3.0,1.0,0.037267080745341616,1.0,1.0,0.037267080745341616

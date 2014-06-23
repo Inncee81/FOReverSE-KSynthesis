@@ -72,7 +72,6 @@ public class ESEEvaluation extends FMLTest {
 		heuristicLoader.closeHeuristics();
 	}
 	
-	@Ignore
 	@Test
 	public void testSPLOTforICSE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -86,7 +85,6 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
-	@Ignore
 	@Test
 	public void testSPLOTforESE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -113,7 +111,6 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
-	@Ignore
 	@Test
 	public void testFASEonSPLOT() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -122,7 +119,8 @@ public class ESEEvaluation extends FMLTest {
 
 		System.out.println("Computing score for FASE FMs");
 		
-		// Create output directory
+		// Create output file
+		new File(OUTPUT_FOLDER + "ESE/SPLOT/").mkdirs();
 		File output = new File(OUTPUT_FOLDER + "ESE/SPLOT/" + "FASE.csv");
 		output.createNewFile();
 		
@@ -203,6 +201,16 @@ public class ESEEvaluation extends FMLTest {
 		FileWriter writerBIG = new FileWriter(new File("output/runningExampleBIG.dot"));
 		writerBIG.write(big.toString());
 		writerBIG.close();
+		
+		FileWriter writerCBIG = new FileWriter(new File("output/runningExampleCBIG.dot"));
+		writerCBIG.write(big.reduceCliques().toString());
+		writerCBIG.close();
+		
+		FileWriter writerTRCBIG = new FileWriter(new File("output/runningExampleTRCBIG.dot"));
+		ImplicationGraph<Set<String>> reducedBIG = big.reduceCliques();
+		TransitiveReduction.INSTANCE.reduce(reducedBIG);
+		writerTRCBIG.write(reducedBIG.toString());
+		writerTRCBIG.close();
 		
 		synthesizer.reduceBIG();
 		ImplicationGraph<String> rbig = synthesizer.getImplicationGraph();

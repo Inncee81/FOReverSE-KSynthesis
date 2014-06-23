@@ -1,0 +1,31 @@
+digraph{
+graph [rankdir=TB];
+node [shape=box];
+edge [arrowhead=normal];
+0[label="[PostgreSQL, Proprietary Licence]",]
+1[label="[MySQL, Open Source]",]
+2[label="[Storage, Wiki, Hosting, Licence]",]
+3[label="[Local]",]
+4[label="[Domain]",]
+5[label="[Programming Language]",]
+6[label="[Java]",]
+7[label="[PHP]",]
+8[label="[Hosted Service]",]
+0->4[label="",]
+0->2[label="",]
+0->8[label="",]
+5->1[label="",]
+7->1[label="",]
+6->1[label="",]
+3->1[label="",]
+1->2[label="",]
+5->2[label="",]
+7->2[label="",]
+6->2[label="",]
+4->2[label="",]
+8->2[label="",]
+3->2[label="",]
+7->5[label="",]
+6->5[label="",]
+4->8[label="",]
+}
