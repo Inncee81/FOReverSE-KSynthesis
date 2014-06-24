@@ -6,6 +6,9 @@ library("coin")
 # Test if our technique is better than the other technique
 testHypothesis <- function(ourTechnique, ourTechniqueName, theOtherTechnique, theOtherTechniqueName) {
   
+  cat(paste("tested technique = ", ourTechniqueName, "\n"))
+  cat(paste("reference technique = ", theOtherTechniqueName, "\n"))
+  
   #testResults <- wilcox.exact(ourTechnique, 
   #                  theOtherTechnique, 
   #                  paired=TRUE, 
@@ -15,7 +18,17 @@ testHypothesis <- function(ourTechnique, ourTechniqueName, theOtherTechnique, th
   #                  conf.int=TRUE,
   #                  conf.level=0.99,
   #                  na.action=na.omit) # NA ???
+
+  # Test normality
+  if (min(ourTechnique, na.rm = TRUE) != max(ourTechnique, na.rm = TRUE)) {
+    cat(paste("normality of tested T : ", shapiro.test(ourTechnique)$p.value, "\n"))  
+  }
   
+  if (min(theOtherTechnique, na.rm = TRUE) != max(theOtherTechnique, na.rm = TRUE)) {
+  cat(paste("normality of reference T : ", shapiro.test(theOtherTechnique)$p.value, "\n"))
+  }
+  
+  # Wilcoxon test
   values <- c(ourTechnique, theOtherTechnique)
   groups <- factor(c(rep(ourTechniqueName, length(ourTechnique)), 
                      rep(theOtherTechniqueName, length(theOtherTechnique))))
@@ -23,17 +36,15 @@ testHypothesis <- function(ourTechnique, ourTechniqueName, theOtherTechnique, th
   testResults <- wilcox_test(values ~ groups, 
                             distribution = "exact", 
                             conf.int = TRUE)
-  #d <- cohensD(ourTechnique, theOtherTechnique, method="paired")
-  meanDiff <- mean(ourTechnique) - mean(theOtherTechnique)
-    
-  cat(paste("tested technique = ", ourTechniqueName, "\n"))
-  cat(paste("reference technique = ", theOtherTechniqueName, "\n"))
-  #cat(paste("p-value = ", testResults$p.value, "\n"))
-  cat(paste("p-value = ", pvalue(testResults), "\n"))
+
+  cat(paste("p-value = ", round(pvalue(testResults), digits = 3), "\n"))
   cat(paste("H0 rejected? = ", pvalue(testResults) < 0.05, "\n"))
-  #print(testResults$p.value)
-  #cat(paste("effect size (Cohen's d) = ", d, "\n"))
-  cat(paste("mean diff = ", meanDiff, "\n"))
+  
+  # Effect size
+  #d <- cohensD(ourTechnique, theOtherTechnique, method="paired")
+  meanDiff <- mean(ourTechnique, na.rm = TRUE) - mean(theOtherTechnique, na.rm = TRUE)
+  cat(paste("mean diff = ", round(meanDiff, digits = 3), "\n"))
+  
   cat("-----------------------------------------\n")
 }
 
@@ -204,8 +215,8 @@ testH7 <- function(dir) {
   fgroupsBIGCoverage <- fgroupsBIG[,grep("% features in a correct cluster",names(fgroupsBIG))]
     
   fgroupsRBIG <- readCSV(dir, "fgroupsRBIG.csv")
-  fgroupsRBIGPrecision <- fgroupsRBIG[,grep("% correct clusters",names(fgroupsBIG))]
-  fgroupsRBIGCoverage <- fgroupsRBIG[,grep("% features in a correct cluster",names(fgroupsBIG))]
+  fgroupsRBIGPrecision <- fgroupsRBIG[,grep("% correct clusters",names(fgroupsRBIG))]
+  fgroupsRBIGCoverage <- fgroupsRBIG[,grep("% features in a correct cluster",names(fgroupsRBIG))]
     
   # Logical feature groups
   ## H7: the reduced BIG can improve the quality of logical feature groups
