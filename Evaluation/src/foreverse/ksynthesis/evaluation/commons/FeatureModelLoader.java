@@ -175,5 +175,13 @@ public class FeatureModelLoader {
 		return pcmFASE;
 	}
 	
+	public List<FeatureModelVariable> getAllSPLOTFeatureModels()  {
+		List<String> includedFMs = readFMNamesFromFile(SPLOT_INCLUDE);
+		List<String> excludedFMs = readFMNamesFromFile(SPLOT_EXCLUDE);
+		List<FeatureModelVariable> allSplotFMs = loadFeatureModelFolder(SPLOT_FOLDER, ".xml", includedFMs, excludedFMs, "");
+		System.out.println(allSplotFMs.size() + " FMs loaded from SPLOT");
+		return allSplotFMs;
+	}
+	
 	
 }

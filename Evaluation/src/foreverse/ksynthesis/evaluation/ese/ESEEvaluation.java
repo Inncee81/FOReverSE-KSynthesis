@@ -72,6 +72,7 @@ public class ESEEvaluation extends FMLTest {
 		heuristicLoader.closeHeuristics();
 	}
 	
+	@Ignore
 	@Test
 	public void testSPLOTforICSE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -85,6 +86,7 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
+	@Ignore
 	@Test
 	public void testSPLOTforESE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -98,6 +100,7 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
+	@Ignore
 	@Test
 	public void testPCMforESE() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -111,6 +114,7 @@ public class ESEEvaluation extends FMLTest {
 		System.out.println();
 	}
 	
+	@Ignore
 	@Test
 	public void testFASEonSPLOT() throws IOException {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
@@ -190,6 +194,7 @@ public class ESEEvaluation extends FMLTest {
 		return runningExample;
 	}
 	
+	@Ignore
 	@Test
 	public void reducedBIGOfRunningExample() throws IOException {
 		FeatureModelVariable runningExample = getRunningExample();
@@ -220,6 +225,51 @@ public class ESEEvaluation extends FMLTest {
 		writerRBIG.close();
 	}
 
+	@Test
+	public void statsOnDatasets() {
+		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
+		List<FeatureModelVariable> allSplotFMs = featureModelLoader.getAllSPLOTFeatureModels();
+		System.out.println("Number of SPLOT FMs that are meaningful : " + allSplotFMs.size());
+		int nbFeatures = 0;
+		for (FeatureModelVariable fm : allSplotFMs) {
+			nbFeatures += fm.features().size();
+		}
+		
+		System.out.println("Total number of features in SPLOT : " + nbFeatures);
+		
+		
+		
+		List<FeatureModelVariable> splotFMs = featureModelLoader.getSPLOTFeatureModels();
+		System.out.println("Number of SPLOT FMs for the experiment : " + splotFMs.size());
+		nbFeatures = 0;
+		int nbCharacters = 0;
+		for (FeatureModelVariable fm : splotFMs) {
+			nbFeatures += fm.features().size();
+			for (String feature : fm.getFm().features()) {
+				nbCharacters += feature.length();
+			}
+		}
+		
+		System.out.println("Total number of features in SPLOT for the experiment : " + nbFeatures);
+		System.out.println("Average number of characters per features for SPLOT : " + nbCharacters / ((double) nbFeatures));
+		
+		
+		List<FeatureModelVariable> pcmFMs = featureModelLoader.getPCMFeatureModels();
+		nbFeatures = 0;
+		nbCharacters = 0;
+		for (FeatureModelVariable fm : pcmFMs) {
+			nbFeatures += fm.features().size();
+			for (String feature : fm.getFm().features()) {
+				nbCharacters += feature.length();
+			}
+		}
+		
+		System.out.println("Total number of features in PCM : " + nbFeatures);
+		System.out.println("Average number of characters per features for PCM : " + nbCharacters / ((double) nbFeatures));
+		
+		// TODO : average characters per features
+	}
+	
 	/**
 	 * Evaluate each heuristics on each FM
 	 * @param heuristics : heuristics to test
