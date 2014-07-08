@@ -194,7 +194,6 @@ public class ESEEvaluation extends FMLTest {
 		return runningExample;
 	}
 	
-	@Ignore
 	@Test
 	public void reducedBIGOfRunningExample() throws IOException {
 		FeatureModelVariable runningExample = getRunningExample();
@@ -206,6 +205,7 @@ public class ESEEvaluation extends FMLTest {
 		FileWriter writerBIG = new FileWriter(new File("output/runningExampleBIG.dot"));
 		writerBIG.write(big.toString());
 		writerBIG.close();
+		System.out.println("BIG - edges : " + big.edges().size());
 		
 		FileWriter writerCBIG = new FileWriter(new File("output/runningExampleCBIG.dot"));
 		writerCBIG.write(big.reduceCliques().toString());
@@ -223,8 +223,10 @@ public class ESEEvaluation extends FMLTest {
 		FileWriter writerRBIG = new FileWriter(new File("output/runningExampleRBIG.dot"));
 		writerRBIG.append(rbig.toString());
 		writerRBIG.close();
+		System.out.println("RBIG - edges : " + rbig.edges().size());
 	}
 
+	@Ignore
 	@Test
 	public void statsOnDatasets() {
 		FeatureModelLoader featureModelLoader = new FeatureModelLoader(_shell, _builder);
