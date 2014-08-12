@@ -7,4 +7,15 @@
   	<artifactId>KSynthesis</artifactId>
   	<version>0.0.1-SNAPSHO</version>
   </parent>
+  
+  
+  
+  <dependencies>
+  		<dependency>
+			<groupId>edu.ucla.sspace</groupId>
+			<artifactId>sspace</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+  </dependencies>
+  
 </project>

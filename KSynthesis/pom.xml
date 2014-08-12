@@ -17,6 +17,7 @@
 			<groupId>fr.inria.familiar</groupId>
 			<artifactId>FAMILIAR-Standalone</artifactId>
 			<version>1.0.10</version>
+			<scope>provided</scope>
 		</dependency>
 		
 		<dependency>
@@ -29,12 +30,6 @@
 			<groupId>net.sourceforge.javacsv</groupId>
 			<artifactId>javacsv</artifactId>
 			<version>2.0</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>edu.ucla.sspace</groupId>
-			<artifactId>sspace</artifactId>
-			<version>2.0.4</version>
 		</dependency>
 		
 		<dependency>
@@ -168,6 +163,28 @@
           <target/>
         </configuration>
       </plugin>
+      
+      <plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>bin</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+						
+							<descriptorRefs>
+							
+								<descriptorRef>
+									jar-with-dependencies
+								</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
     </plugins>
   </build>
   
