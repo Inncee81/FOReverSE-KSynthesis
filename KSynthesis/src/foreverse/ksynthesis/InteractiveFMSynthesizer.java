@@ -16,14 +16,11 @@ import foreverse.ksynthesis.actions.SelectParentAction;
 import foreverse.ksynthesis.actions.SetRootAction;
 import foreverse.ksynthesis.clustering.FMExperiment;
 import foreverse.ksynthesis.clustering.HierarchicalFeatureClusterer;
-import foreverse.ksynthesis.experimental.BIGCliques_Threshold;
 import foreverse.ksynthesis.gui.FeatureComparator;
 import foreverse.ksynthesis.gui.KeyValue;
 import foreverse.ksynthesis.gui.OutDegreeComparator;
 import foreverse.ksynthesis.gui.ParentComparator;
 import foreverse.ksynthesis.metrics.AlwaysZeroMetric;
-import foreverse.ksynthesis.metrics.FeatureFrequencyMetric;
-import foreverse.ksynthesis.metrics.FrequencyMetric;
 import foreverse.ksynthesis.metrics.MetricName;
 import foreverse.ksynthesis.mst.OptimumBranchingFinder;
 import foreverse.ksynthesis.mst.WeightedImplicationGraph;
@@ -53,7 +50,6 @@ public class InteractiveFMSynthesizer extends Observable{
 	private Set<FGroup> orGroups;
 
 	private Heuristic parentSimilarityMetric;
-	private FeatureFrequencyMetric featureFrequencyMetric;
 	private FeatureComparator featureComparator;
 
 	private Heuristic clusteringSimilarityMetric;
@@ -369,19 +365,19 @@ public class InteractiveFMSynthesizer extends Observable{
 		computeBIGWeights(originalBig);
 	}
 
-	public void selectFeatureFrequencyMetric() {
-		featureFrequencyMetric = new FrequencyMetric (fmv);
-
-		for (SimpleEdge edge : big.edges()) {
-			String source = big.getSource(edge);
-			String target = big.getTarget(edge);
-			double weight = featureFrequencyMetric.support(source, target);
-			big.setEdgeWeight(edge, weight);
-
-		}
-		setChanged();
-		notifyObservers();
-	}
+//	public void selectFeatureFrequencyMetric() {
+//		featureFrequencyMetric = new FrequencyMetric (fmv);
+//
+//		for (SimpleEdge edge : big.edges()) {
+//			String source = big.getSource(edge);
+//			String target = big.getTarget(edge);
+//			double weight = featureFrequencyMetric.support(source, target);
+//			big.setEdgeWeight(edge, weight);
+//
+//		}
+//		setChanged();
+//		notifyObservers();
+//	}
 	/**
 	 * Set clustering parameters and compute clusters
 	 * @param clusteringSimilarityMetric
@@ -395,10 +391,10 @@ public class InteractiveFMSynthesizer extends Observable{
 		computeBIGWeights(originalBig);
 	}
 
-	public void setSupportClusteringParameters(double threshold) {
-		this.clusteringThreshold = threshold;
-		computeSupportClusters();
-	}
+//	public void setSupportClusteringParameters(double threshold) {
+//		this.clusteringThreshold = threshold;
+//		computeSupportClusters();
+//	}
 
 	/**
 	 * Compute clusters according to the previously specified similarity metric and threshold
@@ -482,25 +478,25 @@ public class InteractiveFMSynthesizer extends Observable{
 		return false;
 	}
 	
-	private void computeSupportClusters() {
-		supportClusters = new ArrayList<Set<Set<String>>>();
-
-		BIGCliques_Threshold cliques1 = new BIGCliques_Threshold(0.2);
-		cliques1.updateBIG(big);
-		supportClusters.add(new HashSet<Set<String>>(cliques1.getCliques()));
-
-		BIGCliques_Threshold cliques2 = new BIGCliques_Threshold(0.6);
-		cliques2.updateBIG(big);
-		supportClusters.add(new HashSet<Set<String>>(cliques2.getCliques()));
-
-		BIGCliques_Threshold cliques3 = new BIGCliques_Threshold(0.8);
-		cliques3.updateBIG(big);
-		supportClusters.add(new HashSet<Set<String>>(cliques3.getCliques()));
-
-		setChanged();
-		notifyObservers();
-
-	}
+//	private void computeSupportClusters() {
+//		supportClusters = new ArrayList<Set<Set<String>>>();
+//
+//		BIGCliques_Threshold cliques1 = new BIGCliques_Threshold(0.2);
+//		cliques1.updateBIG(big);
+//		supportClusters.add(new HashSet<Set<String>>(cliques1.getCliques()));
+//
+//		BIGCliques_Threshold cliques2 = new BIGCliques_Threshold(0.6);
+//		cliques2.updateBIG(big);
+//		supportClusters.add(new HashSet<Set<String>>(cliques2.getCliques()));
+//
+//		BIGCliques_Threshold cliques3 = new BIGCliques_Threshold(0.8);
+//		cliques3.updateBIG(big);
+//		supportClusters.add(new HashSet<Set<String>>(cliques3.getCliques()));
+//
+//		setChanged();
+//		notifyObservers();
+//
+//	}
 	/**
 	 * Return similarity clusters or null if they have not been computed yet
 	 * @return

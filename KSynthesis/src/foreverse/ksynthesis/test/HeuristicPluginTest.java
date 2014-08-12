@@ -1,20 +1,18 @@
 package foreverse.ksynthesis.test;
 
+import static org.junit.Assert.assertNotNull;
+import foreverse.ksynthesis.ConfigurableHeuristicPlugin;
+import foreverse.ksynthesis.Heuristic;
+import foreverse.ksynthesis.KSynthesisPlugin;
+import foreverse.ksynthesis.KSynthesisPluginLoader;
+import fr.familiar.experimental.FGroup;
+import gsd.graph.ImplicationGraph;
+
 import java.io.File;
 import java.util.HashSet;
 import java.util.List;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
-import fr.familiar.experimental.FGroup;
-import fr.familiar.operations.heuristics.ConfigurableHeuristicPlugin;
-import fr.familiar.operations.heuristics.Heuristic;
-import fr.familiar.operations.heuristics.KSynthesisPlugin;
-import fr.familiar.operations.heuristics.KSynthesisPluginLoader;
-import fr.familiar.test.FMLTest;
-import fr.familiar.variable.FeatureModelVariable;
-import gsd.graph.ImplicationGraph;
 
 public class HeuristicPluginTest {
 

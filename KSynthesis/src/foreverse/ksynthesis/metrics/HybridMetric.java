@@ -1,7 +1,7 @@
 package foreverse.ksynthesis.metrics;
 
+import foreverse.ksynthesis.Heuristic;
 import fr.familiar.experimental.FGroup;
-import fr.familiar.operations.heuristics.Heuristic;
 import gsd.graph.ImplicationGraph;
 
 import java.util.Set;

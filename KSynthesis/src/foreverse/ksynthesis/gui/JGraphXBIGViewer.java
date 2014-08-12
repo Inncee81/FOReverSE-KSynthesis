@@ -1,8 +1,5 @@
 package foreverse.ksynthesis.gui;
 
-import foreverse.ksynthesis.mst.WeightedImplicationGraph;
-import gsd.graph.SimpleEdge;
-
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.HashMap;
@@ -15,6 +12,9 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraph;
+
+import foreverse.ksynthesis.mst.WeightedImplicationGraph;
+import gsd.graph.SimpleEdge;
 
 public class JGraphXBIGViewer extends BIGViewer {
 

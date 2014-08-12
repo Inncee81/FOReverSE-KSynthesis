@@ -1,5 +1,6 @@
 package foreverse.ksynthesis.metrics;
 
+import net.sf.extjwnl.JWNLException;
 import net.sf.extjwnl.data.PointerType;
 import net.sf.extjwnl.data.PointerUtils;
 import net.sf.extjwnl.data.Synset;
@@ -50,6 +51,8 @@ public class WuPalmerMetric extends WordNetMetric {
 			score = (2*n3) / (n1 + n2);				
 
 		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		} catch (JWNLException e) {
 			e.printStackTrace();
 		}
 		return score;

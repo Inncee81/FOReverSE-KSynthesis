@@ -11,10 +11,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import fr.familiar.operations.heuristics.Heuristic;
-import fr.familiar.operations.heuristics.metrics.RandomMetric;
-import fr.familiar.operations.heuristics.mst.OptimumBranchingFinder;
-import fr.familiar.operations.heuristics.mst.WeightedImplicationGraph;
+import foreverse.ksynthesis.Heuristic;
+import foreverse.ksynthesis.metrics.RandomMetric;
+import foreverse.ksynthesis.mst.OptimumBranchingFinder;
+import foreverse.ksynthesis.mst.WeightedImplicationGraph;
 import fr.familiar.test.FMLTest;
 import fr.familiar.variable.FeatureModelVariable;
 import fr.familiar.variable.Variable;

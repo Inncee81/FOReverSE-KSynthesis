@@ -1,5 +1,6 @@
 package foreverse.ksynthesis.metrics;
 
+import net.sf.extjwnl.JWNLException;
 import net.sf.extjwnl.data.PointerType;
 import net.sf.extjwnl.data.Synset;
 import net.sf.extjwnl.data.relationship.Relationship;
@@ -24,6 +25,8 @@ public class PathLengthMetric extends WordNetMetric {
 			}
 			
 		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		} catch (JWNLException e) {
 			e.printStackTrace();
 		}
 

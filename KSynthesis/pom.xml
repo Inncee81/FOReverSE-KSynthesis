@@ -1,0 +1,174 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.inria.familiar.foreverse</groupId>
+  <artifactId>KSynthesis</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <repositories>
+	  <repository>
+	    <id>lib</id>
+	    <url>file://${project.basedir}/lib</url>
+	</repository>
+  </repositories>
+  
+  
+  <dependencies>
+		<dependency>
+			<groupId>fr.inria.familiar</groupId>
+			<artifactId>FAMILIAR-Standalone</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.sf.extjwnl</groupId>
+			<artifactId>extjwnl</artifactId>
+			<version>1.7.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.sourceforge.javacsv</groupId>
+			<artifactId>javacsv</artifactId>
+			<version>2.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>edu.ucla.sspace</groupId>
+			<artifactId>sspace</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+
+		<!-- Local dependencies -->
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>jgraphx</artifactId>
+			<version>1.0</version>
+		</dependency>
+				
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>opennlp-tools-1.5.0</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>weka</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>trove-2.1.0</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>commons-lang-2.4</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>guava-17.0</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>maxent-3.0.0</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>simmetrics_jar_v1_6_2_d07_02_07</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>wikipedia-miner</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>commons-cli-1.2</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>wikipedia-miner-1.6</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>jsc</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>hadoop-0.20.2-core</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>hac</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>weka-wrapper-1.0</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>commons-io-1.4</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>log4j-1.2.16</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>local</groupId>
+			<artifactId>je-4.0.103</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+  </dependencies>
+  
+  
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

@@ -4,11 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import fr.familiar.operations.heuristics.metrics.CommonEdgesMetric;
-import fr.familiar.operations.heuristics.metrics.FMEditDistanceMetric;
-import fr.familiar.operations.heuristics.metrics.ImplicationGraphMetrics;
-import fr.familiar.operations.heuristics.metrics.RefactoringEditDistance;
-import fr.familiar.operations.heuristics.metrics.ZhangEditDistance;
+import foreverse.ksynthesis.metrics.CommonEdgesMetric;
+import foreverse.ksynthesis.metrics.FMEditDistanceMetric;
+import foreverse.ksynthesis.metrics.ImplicationGraphMetrics;
+import foreverse.ksynthesis.metrics.RefactoringEditDistance;
+import foreverse.ksynthesis.metrics.ZhangEditDistance;
 import fr.familiar.parser.FMBuilder;
 import fr.familiar.test.FMLTest;
 import fr.familiar.variable.FeatureModelVariable;

@@ -2,6 +2,7 @@ package foreverse.ksynthesis.metrics;
 
 import java.io.File;
 
+import net.sf.extjwnl.JWNLException;
 import net.sf.extjwnl.data.PointerType;
 import net.sf.extjwnl.data.PointerUtils;
 import net.sf.extjwnl.data.Synset;
@@ -37,6 +38,8 @@ public class DirectedPathLengthMetric extends WordNetMetric {
 			}
 			
 		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		} catch (JWNLException e) {
 			e.printStackTrace();
 		}
 

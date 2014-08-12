@@ -2,3 +2,4 @@
 bin/
 .Rproj.user
 *~
+.settings/
