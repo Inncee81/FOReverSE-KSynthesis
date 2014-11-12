@@ -10,7 +10,7 @@ import foreverse.ksynthesis.metrics.ImplicationGraphMetrics;
 import foreverse.ksynthesis.metrics.RefactoringEditDistance;
 import foreverse.ksynthesis.metrics.ZhangEditDistance;
 import fr.familiar.parser.FMBuilder;
-import fr.familiar.test.FMLTest;
+import fr.familiar.FMLTest;
 import fr.familiar.variable.FeatureModelVariable;
 import gsd.graph.ImplicationGraph;
 

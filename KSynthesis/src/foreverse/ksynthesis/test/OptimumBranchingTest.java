@@ -15,7 +15,7 @@ import foreverse.ksynthesis.Heuristic;
 import foreverse.ksynthesis.metrics.RandomMetric;
 import foreverse.ksynthesis.mst.OptimumBranchingFinder;
 import foreverse.ksynthesis.mst.WeightedImplicationGraph;
-import fr.familiar.test.FMLTest;
+import fr.familiar.FMLTest;
 import fr.familiar.variable.FeatureModelVariable;
 import fr.familiar.variable.Variable;
 import gsd.graph.ImplicationGraph;
